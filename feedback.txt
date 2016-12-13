@@ -1,0 +1,52 @@
+Słownik
+Nie zorganizowany alfabetycznie :(
+
+Brak definicji pojęć: pracownik (uczelni), przedmiot, typ/rodzaj studiów (w dokumentach chyba stosowane zamiennie)
+Definicje niezgodne z dziedziną: kurs, limit godzin (ustalany jest w skali roku, a nie miesiąca), powierzenia w semestrze (czym jest autor?)
+
+
+=============
+
+Reguły
+BR/001, BR/002, ... - to nie reguły biznesowe, tylko systemowe
+Niektóre reguły nieinteresujące - widać na diagramie klas, np. BR/003, Br/004, Br/007 ... (prosiłam, aby ich nie zapisywać tekstowo)
+Nie zauważyłam reguł związanych z powierzeniami, które zapisano w rozporządzeniu wewnętrznym, umieszczonym na bordzie.
+=============
+
+Model
+
+Niektóre asocjacje nieinteresujące, np. obsługuje sekretariat, jest autorem
+numer semestru lepiej pamiętać przy Przedmiocie lub Kursie, nie przy karcie
+
+Brak związku między specjalnością i planem studiów, co uniemożliwia mi zaplanowanie powierzeń dla specjalności.
+Postęp akceptacji powinien być polem wyliczanym.
+Brak atrybutu dla formy studiów (wykorzystana w interfejsie)
+Zła liczność - Zapotrzebowanie w semestrze-Kurs (nie każdy kurs będzie miał zapotrzebowanie)
+
+W jaki sposób w modelu zrealizujecie regułę  BR/209?
+
+=============
+
+Interfejs
+
+Ekran Powierzenia 2
+Muszę móc jeszcze ustalić specjalność w obrębie kierunku.
+Lepiej typ studiów ustalać po prawej stronie.
+
+Ekran powierzenia 3
+Nie wiem czym jest kolumna: Godziny pract, Niezaplanowanych godz. (zwłaszza ta)
+
+
+Sondaż
+Jak zrealizować wybór kilku specjalności wg preferencji?
+=============
+
+Wym. niefunkcjonalne
+
+Część wymagań niefunkcjonalnych zaproponowana przez autorów dokumentu, bez śladowania do dokumentu Wizji.
+=============
+
+Podsumowanie: Niepotrzebnie napisali Państwo tyle reguł, z których co najmniej 50% ma swoją reprezentację na diagramie klas.
+
+
+Ocena: 4.5
