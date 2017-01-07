@@ -1,6 +1,6 @@
 package core.model;
 
-import entities.PelnomocnikDziekanaDsKierunku;
+import entities.general.PelnomocnikDziekanaDsKierunku;
 
 public class PowierzeniaWSemestrze {
 
