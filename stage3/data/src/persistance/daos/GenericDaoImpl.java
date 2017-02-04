@@ -31,4 +31,8 @@ public class GenericDaoImpl<T> implements GenericDao<T> {
 		this.entityManager.remove(this.entityManager.getReference(type, id));
 	}
 
+	public EntityManager getEntityManager() {
+		return this.entityManager;
+	}
+
 }

@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 import entities.general.Kierunek;
@@ -18,6 +19,7 @@ import entities.general.Powierzenie;
 import entities.general.Semestr;
 
 @Entity
+@NamedQuery(name = "PowierzeniaWSemestrze.getAllDesignationsInSemesterManagedBy", query = "SELECT pws FROM PowierzeniaWSemestrze pws WHERE pws.pelnomocnikDziekanaDsKierunku = (:designationsIds)")
 public class PowierzeniaWSemestrze {
 
 	@Id

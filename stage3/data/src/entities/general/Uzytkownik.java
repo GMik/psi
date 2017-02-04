@@ -33,4 +33,9 @@ public abstract class Uzytkownik {
 
 	@ManyToMany
 	private List<Wydzial> wydzialy = new ArrayList<Wydzial>();
+
+	public long getId() {
+		return id;
+	}
+
 }

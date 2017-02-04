@@ -1,6 +1,7 @@
 package entities.general;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -16,6 +18,7 @@ import entities.designations.FormaKursu;
 import entities.designations.Zapotrzebowanie;
 
 @Entity
+@NamedQuery(name = "Kurs.findCoursesForDesignationsInSemester", query = "SELECT k FROM Kurs k WHERE k.id in (:designationsIds)")
 public class Kurs {
 
 	@Id
@@ -32,7 +35,7 @@ public class Kurs {
 	private Przedmiot przedmiot;
 
 	@OneToMany
-	private ArrayList<Powierzenie> powierzenia = new ArrayList<Powierzenie>();
+	private List<Powierzenie> powierzenia = new ArrayList<Powierzenie>();
 
 	@OneToOne
 	private Zapotrzebowanie zapotrzebowanie;

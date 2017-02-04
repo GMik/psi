@@ -1,6 +1,7 @@
 package entities.general;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -11,9 +12,9 @@ import entities.designations.PowierzeniaWSemestrze;
 public class PelnomocnikDziekanaDsKierunku extends Uzytkownik {
 
 	@OneToMany
-	private ArrayList<Kierunek> kierunki = new ArrayList<Kierunek>();
+	private List<Kierunek> kierunki = new ArrayList<Kierunek>();
 
 	@OneToMany
-	private ArrayList<PowierzeniaWSemestrze> powierzeniaWSemestrze = new ArrayList<PowierzeniaWSemestrze>();
+	private List<PowierzeniaWSemestrze> powierzeniaWSemestrze = new ArrayList<PowierzeniaWSemestrze>();
 
 }
