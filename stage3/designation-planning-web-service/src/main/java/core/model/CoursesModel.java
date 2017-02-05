@@ -5,9 +5,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.neweducation.data.persistence.daos.KursDao;
+import com.neweducation.data.persistence.entities.general.Kurs;
+
 import dtos.CourseTo;
-import entities.general.Kurs;
-import persistance.daos.KursDao;
 import utils.DozerBeanCollectionMapper;
 
 public class CoursesModel {
