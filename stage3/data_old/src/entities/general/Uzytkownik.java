@@ -1,0 +1,41 @@
+package entities.general;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+
+@Entity
+public abstract class Uzytkownik {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	protected long id;
+
+	@Column
+	protected String imie;
+
+	@Column
+	protected String nazwisko;
+
+	@Enumerated
+	protected Uprawnienie uprawnienie;
+
+	@OneToOne
+	private DaneLogowania daneLogowania;
+
+	@ManyToMany
+	private List<Wydzial> wydzialy = new ArrayList<Wydzial>();
+
+	public long getId() {
+		return id;
+	}
+
+}
