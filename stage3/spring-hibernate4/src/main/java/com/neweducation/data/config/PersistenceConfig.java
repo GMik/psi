@@ -25,6 +25,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.google.common.base.Preconditions;
 import com.neweducation.data.persistence.daos.KursDao;
+import com.neweducation.data.persistence.daos.KursDaoImpl;
 
 @Configuration
 @EnableTransactionManagement
@@ -96,8 +97,8 @@ public class PersistenceConfig {
 	}
 
 	@Bean
-	public KursDao fooHibernateDao() {
-		return new KursDao();
+	public KursDao fooKursDao() {
+		return new KursDaoImpl();
 	}
 
 	// @Bean
