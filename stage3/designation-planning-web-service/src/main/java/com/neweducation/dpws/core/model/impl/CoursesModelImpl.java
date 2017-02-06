@@ -15,10 +15,6 @@ import utils.DozerBeanCollectionMapper;
 @Component
 public class CoursesModelImpl extends AbstractModel implements CoursesModel {
 
-	// @Autowired
-	// @Qualifier("data")
-	// private KursService kursService;
-
 	public List<CourseTo> getCoursesForDesignationInSemester(int designationId) {
 		return getCoursesForDesignationsInSemester(Collections.singletonList(designationId));
 	}
