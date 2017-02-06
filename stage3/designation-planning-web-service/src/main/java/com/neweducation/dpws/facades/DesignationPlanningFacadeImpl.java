@@ -1,15 +1,16 @@
-package facades;
+package com.neweducation.dpws.facades;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.neweducation.dpws.service.DesignationService;
+
 import dtos.CourseTo;
 import dtos.DesignationTo;
 import dtos.LecturerTo;
 import dtos.UserTo;
-import service.DesignationService;
 
 @RestController
 public class DesignationPlanningFacadeImpl implements DesignationPlanningFacade {

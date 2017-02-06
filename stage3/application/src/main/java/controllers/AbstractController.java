@@ -2,7 +2,7 @@ package controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import facades.DesignationPlanningFacade;
+import com.neweducation.dpws.facades.DesignationPlanningFacade;
 
 public class AbstractController {
 

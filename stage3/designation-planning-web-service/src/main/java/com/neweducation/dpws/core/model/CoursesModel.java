@@ -1,4 +1,4 @@
-package core.model;
+package com.neweducation.dpws.core.model;
 
 import java.util.List;
 

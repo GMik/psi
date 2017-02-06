@@ -1,4 +1,4 @@
-package service;
+package com.neweducation.dpws.service;
 
 import java.util.List;
 

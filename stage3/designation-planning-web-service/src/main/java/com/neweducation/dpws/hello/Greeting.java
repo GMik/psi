@@ -1,4 +1,4 @@
-package hello;
+package com.neweducation.dpws.hello;
 
 public class Greeting {
 

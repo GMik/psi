@@ -26,13 +26,12 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
-import com.neweducation.data.config.PersistenceConfig;
 import com.neweducation.data.persistence.entities.general.Kurs;
-
-import core.model.CoursesModelImpl;
+import com.neweducation.dpws.config.DpwsConfig;
+import com.neweducation.dpws.core.model.CoursesModel;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { PersistenceConfig.class }, loader = AnnotationConfigContextLoader.class)
+@ContextConfiguration(classes = { DpwsConfig.class }, loader = AnnotationConfigContextLoader.class)
 
 public class GreetingControllerTests {
 
@@ -58,6 +57,9 @@ public class GreetingControllerTests {
 	@Autowired
 	ApplicationContext applicationContext;
 
+	@Autowired
+	CoursesModel coursesModel;
+
 	public void printBeans() {
 		List<String> beans = Arrays.asList(applicationContext.getBeanDefinitionNames());
 		for (String b : beans) {
@@ -68,11 +70,11 @@ public class GreetingControllerTests {
 	@Test
 	public void testx() {
 		printBeans();
-		CoursesModelImpl model = new CoursesModelImpl();
-		Kurs k = model.getById(1l);
-
-		System.out.println(k.getLiczbaGodzin());
-		System.out.println(k.getNazwa());
+		// CoursesModelImpl model = new CoursesModelImpl();
+		Kurs k = coursesModel.getById(1l);
+		//
+		// System.out.println(k.getLiczbaGodzin());
+		// System.out.println(k.getNazwa());
 	}
 
 }

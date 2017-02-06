@@ -1,4 +1,4 @@
-package service;
+package com.neweducation.dpws.service;
 
 public interface DesignaitonsMailingService {
 

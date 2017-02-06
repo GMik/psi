@@ -1,13 +1,14 @@
-package service;
+package com.neweducation.dpws.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import core.model.CoursesModelImpl;
-import core.model.DesignationsInSemesterModel;
-import core.model.DesignationsModel;
-import core.model.LecturersModel;
+import com.neweducation.dpws.core.model.CoursesModel;
+import com.neweducation.dpws.core.model.DesignationsInSemesterModel;
+import com.neweducation.dpws.core.model.DesignationsModel;
+import com.neweducation.dpws.core.model.LecturersModel;
+
 import dtos.CourseTo;
 import dtos.DesignationTo;
 import dtos.LecturerTo;
@@ -16,7 +17,7 @@ import dtos.UserTo;
 public class DesignationServiceImpl implements DesignationService {
 
 	@Autowired
-	private CoursesModelImpl coursesModel;
+	private CoursesModel coursesModel;
 
 	@Autowired
 	private DesignationsInSemesterModel designationsInSemesterModel;

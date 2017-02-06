@@ -1,10 +1,13 @@
-package core.model;
+package com.neweducation.dpws.core.model.impl;
 
 import java.util.List;
 
+import com.neweducation.dpws.core.model.AbstractModel;
+import com.neweducation.dpws.core.model.DesignationsModel;
+
 import dtos.DesignationTo;
 
-public class DesignationsModel {
+public class DesignationsModelImpl extends AbstractModel implements DesignationsModel {
 
 	public List<DesignationTo> getDesignations() {
 		// TODO Auto-generated method stub

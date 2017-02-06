@@ -7,7 +7,6 @@ import javax.sql.DataSource;
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
@@ -37,7 +36,7 @@ import com.neweducation.data.services.impl.KursServiceImpl;
 		"com.neweducation.data.persistence" }, transactionManagerRef = "jpaTransactionManager")
 @EnableJpaAuditing
 @PropertySource({ "classpath:persistence-mysql.properties" })
-@ComponentScan({ "com.neweducation.data.persistence" })
+// @ComponentScan({ "com.neweducation.data.persistence" })
 public class PersistenceConfig {
 
 	@Autowired

@@ -1,4 +1,4 @@
-package facades;
+package com.neweducation.dpws.facades;
 
 import java.util.List;
 
