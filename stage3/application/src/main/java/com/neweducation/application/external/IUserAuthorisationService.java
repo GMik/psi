@@ -1,4 +1,4 @@
-package external;
+package com.neweducation.application.external;
 
 /**
  * Created by Maciej Wolański

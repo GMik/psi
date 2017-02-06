@@ -15,40 +15,55 @@
  */
 package application;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@AutoConfigureMockMvc
+import com.neweducation.application.config.AppConfig;
+import com.neweducation.dpws.facades.DesignationPlanningFacade;
+
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
+//@AutoConfigureMockMvc
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = { AppConfig.class }, loader = AnnotationConfigContextLoader.class)
+
 public class GreetingControllerTests {
 
-    @Autowired
-    private MockMvc mockMvc;
+	// @Autowired
+	// private MockMvc mockMvc;
+	//
+	// @Test
+	// public void noParamGreetingShouldReturnDefaultMessage() throws Exception
+	// {
+	//
+	// this.mockMvc.perform(get("/greeting")).andDo(print()).andExpect(status().isOk())
+	// .andExpect(jsonPath("$.content").value("Hello, World!"));
+	// }
+	//
+	// @Test
+	// public void paramGreetingShouldReturnTailoredMessage() throws Exception {
+	//
+	// this.mockMvc.perform(get("/greeting").param("name", "Spring Community"))
+	// .andDo(print()).andExpect(status().isOk())
+	// .andExpect(jsonPath("$.content").value("Hello, Spring Community!"));
+	// }
 
-    @Test
-    public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
+	@Autowired
+	DesignationPlanningFacade designationPlanningFacade;
 
-        this.mockMvc.perform(get("/greeting")).andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.content").value("Hello, World!"));
-    }
+	@Test
+	public void testx() {
 
-    @Test
-    public void paramGreetingShouldReturnTailoredMessage() throws Exception {
-
-        this.mockMvc.perform(get("/greeting").param("name", "Spring Community"))
-                .andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.content").value("Hello, Spring Community!"));
-    }
-
+		// designationPlanningFacade.get
+		// printBeans();
+		// CoursesModelImpl model = new CoursesModelImpl();
+		// Kurs k = coursesModel.getById(1l);
+		//
+		// System.out.println(k.getLiczbaGodzin());
+		// System.out.println(k.getNazwa());
+	}
 }

@@ -1,4 +1,4 @@
-package controllers;
+package com.neweducation.application.controllers;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package controllers;
+package com.neweducation.application.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

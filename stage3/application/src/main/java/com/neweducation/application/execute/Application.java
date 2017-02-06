@@ -1,4 +1,4 @@
-package application;
+package com.neweducation.application.execute;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
