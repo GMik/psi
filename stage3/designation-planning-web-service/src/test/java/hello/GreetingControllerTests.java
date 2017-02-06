@@ -26,9 +26,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
-import com.neweducation.data.persistence.entities.general.Kurs;
 import com.neweducation.dpws.config.DpwsConfig;
 import com.neweducation.dpws.core.model.CoursesModel;
+
+import dtos.CourseTo;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { DpwsConfig.class }, loader = AnnotationConfigContextLoader.class)
@@ -71,7 +72,9 @@ public class GreetingControllerTests {
 	public void testx() {
 		printBeans();
 		// CoursesModelImpl model = new CoursesModelImpl();
-		Kurs k = coursesModel.getById(1l);
+		CourseTo cto = coursesModel.getById(1l);
+		System.out.println(cto.liczbaGodzin);
+		System.out.println(cto.nazwa);
 		//
 		// System.out.println(k.getLiczbaGodzin());
 		// System.out.println(k.getNazwa());

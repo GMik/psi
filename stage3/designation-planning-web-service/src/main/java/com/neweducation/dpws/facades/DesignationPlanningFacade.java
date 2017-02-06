@@ -9,6 +9,8 @@ import dtos.UserTo;
 
 public interface DesignationPlanningFacade {
 
+	CourseTo tempzzzgetCourseById(long id);
+
 	List<CourseTo> getCoursesForDesignationsInSemester(int designationId);
 
 	void notifyLecturersOfDesignations(int disId);

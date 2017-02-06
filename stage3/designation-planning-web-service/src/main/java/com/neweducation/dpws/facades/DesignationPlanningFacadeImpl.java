@@ -3,7 +3,6 @@ package com.neweducation.dpws.facades;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.neweducation.dpws.service.DesignationService;
 
@@ -12,7 +11,6 @@ import dtos.DesignationTo;
 import dtos.LecturerTo;
 import dtos.UserTo;
 
-@RestController
 public class DesignationPlanningFacadeImpl implements DesignationPlanningFacade {
 
 	@Autowired
@@ -54,6 +52,12 @@ public class DesignationPlanningFacadeImpl implements DesignationPlanningFacade 
 
 	public void setDesignationService(DesignationService designationService) {
 		this.designationService = designationService;
+	}
+
+	@Override
+	public CourseTo tempzzzgetCourseById(long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

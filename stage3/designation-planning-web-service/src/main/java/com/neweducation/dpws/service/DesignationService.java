@@ -25,4 +25,6 @@ public interface DesignationService {
 
 	void updateDesignationsForCourse(String courseId, List<DesignationTo> designations);
 
+	CourseTo zzzzzGetCourseById(long id);
+
 }

@@ -65,4 +65,10 @@ public class DesignationServiceImpl implements DesignationService {
 		designationsModel.updateDesignationsForCourse(courseId, designations);
 	}
 
+	@Override
+	public CourseTo zzzzzGetCourseById(long id) {
+		return coursesModel.getById(id);
+
+	}
+
 }

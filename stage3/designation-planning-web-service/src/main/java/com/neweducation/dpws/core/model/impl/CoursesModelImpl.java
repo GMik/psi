@@ -24,8 +24,14 @@ public class CoursesModelImpl extends AbstractModel implements CoursesModel {
 		return DozerBeanCollectionMapper.map(courses, CourseTo.class);
 	}
 
-	public Kurs getById(long id) {
-		return dataFacade.find(id);
+	public CourseTo getById(long id) {
+
+		Kurs example = dataFacade.find(id);
+		CourseTo cto = new CourseTo();
+		cto.id = example.getId();
+		cto.liczbaGodzin = example.getLiczbaGodzin();
+		cto.nazwa = example.getNazwa();
+		return cto;
 	}
 
 }
