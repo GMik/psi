@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import core.model.CoursesModel;
+import core.model.CoursesModelImpl;
 import core.model.DesignationsInSemesterModel;
 import core.model.DesignationsModel;
 import core.model.LecturersModel;
@@ -16,7 +16,7 @@ import dtos.UserTo;
 public class DesignationServiceImpl implements DesignationService {
 
 	@Autowired
-	private CoursesModel coursesModel;
+	private CoursesModelImpl coursesModel;
 
 	@Autowired
 	private DesignationsInSemesterModel designationsInSemesterModel;

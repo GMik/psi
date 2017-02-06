@@ -15,40 +15,64 @@
  */
 package hello;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import java.util.Arrays;
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.context.ApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@AutoConfigureMockMvc
+import com.neweducation.data.config.PersistenceConfig;
+import com.neweducation.data.persistence.entities.general.Kurs;
+
+import core.model.CoursesModelImpl;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = { PersistenceConfig.class }, loader = AnnotationConfigContextLoader.class)
+
 public class GreetingControllerTests {
 
-    @Autowired
-    private MockMvc mockMvc;
+	// @Autowired
+	// private MockMvc mockMvc;
 
-    @Test
-    public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
+	// @Test
+	// public void noParamGreetingShouldReturnDefaultMessage() throws Exception
+	// {
+	//
+	// this.mockMvc.perform(get("/greeting")).andDo(print()).andExpect(status().isOk())
+	// .andExpect(jsonPath("$.content").value("Hello, World!"));
+	// }
+	//
+	// @Test
+	// public void paramGreetingShouldReturnTailoredMessage() throws Exception {
+	//
+	// this.mockMvc.perform(get("/greeting").param("name", "Spring Community"))
+	// .andDo(print()).andExpect(status().isOk())
+	// .andExpect(jsonPath("$.content").value("Hello, Spring Community!"));
+	// }
 
-        this.mockMvc.perform(get("/greeting")).andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.content").value("Hello, World!"));
-    }
+	@Autowired
+	ApplicationContext applicationContext;
 
-    @Test
-    public void paramGreetingShouldReturnTailoredMessage() throws Exception {
+	public void printBeans() {
+		List<String> beans = Arrays.asList(applicationContext.getBeanDefinitionNames());
+		for (String b : beans) {
+			System.out.println(b);
+		}
+	}
 
-        this.mockMvc.perform(get("/greeting").param("name", "Spring Community"))
-                .andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.content").value("Hello, Spring Community!"));
-    }
+	@Test
+	public void testx() {
+		printBeans();
+		CoursesModelImpl model = new CoursesModelImpl();
+		Kurs k = model.getById(1l);
+
+		System.out.println(k.getLiczbaGodzin());
+		System.out.println(k.getNazwa());
+	}
 
 }
