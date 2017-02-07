@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.springframework</groupId>
-    <artifactId>survey-handling-web-service</artifactId>
+    <artifactId>application</artifactId>
     <version>0.1.0</version>
 
     <parent>
@@ -27,6 +27,16 @@
             <groupId>com.jayway.jsonpath</groupId>
             <artifactId>json-path</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>nowa.edukacja</groupId>
+            <artifactId>data</artifactId>
+            <version>0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>designation-planning-web-service</artifactId>
+            <version>0.1.0</version>
         </dependency>
     </dependencies>
 
