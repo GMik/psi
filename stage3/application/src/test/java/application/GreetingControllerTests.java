@@ -25,6 +25,8 @@ import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import com.neweducation.application.config.AppConfig;
 import com.neweducation.dpws.facades.DesignationPlanningFacade;
 
+import dtos.CourseTo;
+
 //@RunWith(SpringRunner.class)
 //@SpringBootTest
 //@AutoConfigureMockMvc
@@ -58,7 +60,7 @@ public class GreetingControllerTests {
 	@Test
 	public void testx() {
 
-		// designationPlanningFacade.get
+		CourseTo c = designationPlanningFacade.tempzzzgetCourseById(1);
 		// printBeans();
 		// CoursesModelImpl model = new CoursesModelImpl();
 		// Kurs k = coursesModel.getById(1l);

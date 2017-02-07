@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import dtos.CourseTo;
-import dtos.DesignationsInSemesterTo;
 
 @RestController
 public class DesignationsInSemesterController extends AbstractController {
@@ -20,10 +19,14 @@ public class DesignationsInSemesterController extends AbstractController {
 		return designationPlanningFacade.getCoursesForDesignationsInSemester(designationId);
 	}
 
-	@RequestMapping(value = "/designationsinsemester/all", method = RequestMethod.GET)
-	public List<DesignationsInSemesterTo> getAllDesignationsInSemesterManagedBy(int userId, String token) {
-
-		return designationPlanningFacade.getCoursesForDesignationsInSemester(userId, token);
-	}
+	// @RequestMapping(value = "/designationsinsemester/all", method =
+	// RequestMethod.GET)
+	// public List<DesignationsInSemesterTo>
+	// getAllDesignationsInSemesterManagedBy(int userId, String token) {
+	//
+	// return
+	// designationPlanningFacade.getCoursesForDesignationsInSemester(userId,
+	// token);
+	// }
 
 }

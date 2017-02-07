@@ -82,11 +82,11 @@ public class Kurs {
 		this.powierzenia = powierzenia;
 	}
 
-	public Zapotrzebowanie getZapotrzebowanie() {
+	public List<Zapotrzebowanie> getZapotrzebowanie() {
 		return zapotrzebowanie;
 	}
 
-	public void setZapotrzebowanie(Zapotrzebowanie zapotrzebowanie) {
+	public void setZapotrzebowanie(List<Zapotrzebowanie> zapotrzebowanie) {
 		this.zapotrzebowanie = zapotrzebowanie;
 	}
 

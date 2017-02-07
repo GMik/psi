@@ -9,5 +9,5 @@ public interface DataFacade {
 
 	Kurs find(long id);
 
-	void getAllDesignationsInSemesterManagedBy(int userId, String token);
+	// void getAllDesignationsInSemesterManagedBy(int userId, String token);
 }

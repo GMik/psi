@@ -26,9 +26,13 @@ import com.google.common.base.Preconditions;
 import com.neweducation.data.facade.DataFacade;
 import com.neweducation.data.facade.DataFacadeImpl;
 import com.neweducation.data.persistence.daos.KursDao;
+import com.neweducation.data.persistence.daos.PowierzeniaWSemestrzeDao;
 import com.neweducation.data.persistence.daos.impl.KursDaoImpl;
+import com.neweducation.data.persistence.daos.impl.PowierzeniaWSemestrzeDaoImpl;
 import com.neweducation.data.services.KursService;
+import com.neweducation.data.services.PowierzeniaWSemestrzeService;
 import com.neweducation.data.services.impl.KursServiceImpl;
+import com.neweducation.data.services.impl.PowierzeniaWSemestrzeServiceImpl;
 
 @Configuration
 @EnableTransactionManagement
@@ -112,6 +116,16 @@ public class PersistenceConfig {
 	@Bean
 	public DataFacade dataFacade() {
 		return new DataFacadeImpl();
+	}
+
+	@Bean
+	public PowierzeniaWSemestrzeService powierzeniaWSemestrzeService() {
+		return new PowierzeniaWSemestrzeServiceImpl();
+	}
+
+	@Bean
+	public PowierzeniaWSemestrzeDao powierzeniaWSemestrzeDao() {
+		return new PowierzeniaWSemestrzeDaoImpl();
 	}
 
 	private final Properties hibernateProperties() {

@@ -7,9 +7,12 @@ import org.springframework.stereotype.Service;
 import com.neweducation.data.persistence.daos.PowierzeniaWSemestrzeDao;
 import com.neweducation.data.persistence.daos.generics.IOperations;
 import com.neweducation.data.persistence.entities.designations.PowierzeniaWSemestrze;
+import com.neweducation.data.services.AbstractHibernateService;
+import com.neweducation.data.services.PowierzeniaWSemestrzeService;
 
 @Service
-public class PowierzeniaWSemestrzeServiceImpl {
+public class PowierzeniaWSemestrzeServiceImpl extends AbstractHibernateService<PowierzeniaWSemestrze>
+		implements PowierzeniaWSemestrzeService {
 
 	@Autowired
 	@Qualifier("powierzeniaWSemestrzeDao")
@@ -22,7 +25,13 @@ public class PowierzeniaWSemestrzeServiceImpl {
 	@Override
 	protected IOperations<PowierzeniaWSemestrze> getDao() {
 		return dao;
+
 	}
+
+	// @Override
+	// protected IOperations<PowierzeniaWSemestrze> getDao() {
+	// return dao;
+	// }
 
 }
 

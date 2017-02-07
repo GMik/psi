@@ -5,6 +5,6 @@ import com.neweducation.data.persistence.entities.designations.PowierzeniaWSemes
 
 public interface PowierzeniaWSemestrzeService extends IOperations<PowierzeniaWSemestrze> {
 
-	Object getAllDesignationsInSemesterManagedBy(int userId, String token);
+	// Object getAllDesignationsInSemesterManagedBy(int userId, String token);
 
 }

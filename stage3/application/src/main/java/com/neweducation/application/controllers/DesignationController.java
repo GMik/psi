@@ -15,6 +15,17 @@ public class DesignationController extends AbstractController {
 
 	// TODO
 	// (1) input - (id kursu, semestr)
+	// (1) output - List<Powierzenie>, List<ProwadzacyZajecia>,
+	// List<ProwadzacyZajecia>
+	// @RequestMapping(value = "TODO", method = RequestMethod.GET)
+	// public void zzz() {
+	// List<DesignationTo> designations =
+	// this.designationPlanningFacade.getAllDesignationsFor(long courseId, long
+	// semesterId);
+	// List<LecturerTo> classesLecturers =
+	// this.designationPlanningFacade.getLecturersFor(long courseId);
+	// List<LecturerTo>
+	// }
 
 	// (2) input - (id kursu, id powierzenia, id prowadzacego, liczba
 	// godzin(Powierzenie.class)

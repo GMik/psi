@@ -31,10 +31,13 @@ public class DataFacadeImpl implements DataFacade {
 		return kursService.find(id);
 	}
 
-	@Override
-	public void getAllDesignationsInSemesterManagedBy(int userId, String token) {
-		return powierzeniaWSemestrzeService.getAllDesignationsInSemesterManagedBy(userId, token);
-
-	}
+	// @Override
+	// public List getAllDesignationsInSemesterManagedBy(int userId, String
+	// token) {
+	// return
+	// powierzeniaWSemestrzeService.getAllDesignationsInSemesterManagedBy(userId,
+	// token);
+	//
+	// }
 
 }

@@ -6,7 +6,6 @@ import com.neweducation.dpws.core.model.AbstractModel;
 import com.neweducation.dpws.core.model.DesignationsInSemesterModel;
 
 import dtos.DesignationTo;
-import dtos.DesignationsInSemesterTo;
 import dtos.UserTo;
 
 public class DesignationsInSemesterModelImpl extends AbstractModel implements DesignationsInSemesterModel {
@@ -16,9 +15,10 @@ public class DesignationsInSemesterModelImpl extends AbstractModel implements De
 		return null;
 	}
 
-	@Override
-	public List<DesignationsInSemesterTo> getAllDesignationsInSemesterManagedBy(int userId, String token) {
-		this.dataFacade.getAllDesignationsInSemesterManagedBy(userId, token);
-	}
+	// @Override
+	// public List<DesignationsInSemesterTo>
+	// getAllDesignationsInSemesterManagedBy(int userId, String token) {
+	// this.dataFacade.getAllDesignationsInSemesterManagedBy(userId, token);
+	// }
 
 }
