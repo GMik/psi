@@ -4,6 +4,7 @@ import java.util.List;
 
 import dtos.CourseTo;
 import dtos.DesignationTo;
+import dtos.DesignationsInSemesterTo;
 import dtos.LecturerTo;
 import dtos.UserTo;
 
@@ -26,5 +27,7 @@ public interface DesignationService {
 	void updateDesignationsForCourse(String courseId, List<DesignationTo> designations);
 
 	CourseTo zzzzzGetCourseById(long id);
+
+	List<DesignationsInSemesterTo> getAllDesignationsInSemesterManagedBy(int userId, String token);
 
 }

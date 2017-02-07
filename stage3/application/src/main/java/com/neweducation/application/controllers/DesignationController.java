@@ -13,4 +13,10 @@ public class DesignationController extends AbstractController {
 		this.designationPlanningFacade.notifyLecturersOfDesignations(designationId);
 	}
 
+	// TODO
+	// (1) input - (id kursu, semestr)
+
+	// (2) input - (id kursu, id powierzenia, id prowadzacego, liczba
+	// godzin(Powierzenie.class)
+
 }

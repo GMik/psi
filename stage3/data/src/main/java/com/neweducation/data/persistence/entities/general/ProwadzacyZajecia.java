@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+import com.neweducation.data.persistence.entities.designations.LimityProwadzacego;
 import com.neweducation.data.persistence.entities.designations.PowierzeniaProwadzacego;
 
 @Entity
@@ -17,4 +18,7 @@ public class ProwadzacyZajecia extends Uzytkownik {
 
 	@OneToMany
 	private List<PowierzeniaProwadzacego> powierzeniaProwadzacego = new ArrayList<PowierzeniaProwadzacego>();
+
+	@OneToMany
+	private List<LimityProwadzacego> limityProwadzacego = new ArrayList<LimityProwadzacego>();
 }

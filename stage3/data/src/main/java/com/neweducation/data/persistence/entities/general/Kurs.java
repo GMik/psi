@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 import com.neweducation.data.persistence.entities.designations.FormaKursu;
 import com.neweducation.data.persistence.entities.designations.Zapotrzebowanie;
@@ -37,8 +36,8 @@ public class Kurs {
 	@OneToMany
 	private List<Powierzenie> powierzenia = new ArrayList<Powierzenie>();
 
-	@OneToOne
-	private Zapotrzebowanie zapotrzebowanie;
+	@OneToMany
+	private List<Zapotrzebowanie> zapotrzebowanie = new ArrayList<Zapotrzebowanie>();
 
 	@Enumerated
 	private FormaKursu formaKursu;

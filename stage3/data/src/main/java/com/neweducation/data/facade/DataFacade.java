@@ -8,4 +8,6 @@ public interface DataFacade {
 	List<Kurs> getCoursesForDesignationsInSemester(List<Integer> designationsIds);
 
 	Kurs find(long id);
+
+	void getAllDesignationsInSemesterManagedBy(int userId, String token);
 }

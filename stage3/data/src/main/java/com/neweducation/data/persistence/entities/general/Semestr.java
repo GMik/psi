@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.neweducation.data.persistence.entities.designations.LimityProwadzacego;
 import com.neweducation.data.persistence.entities.designations.PowierzeniaProwadzacego;
 import com.neweducation.data.persistence.entities.designations.PowierzeniaWSemestrze;
 import com.neweducation.data.persistence.entities.designations.Zapotrzebowanie;
@@ -39,4 +40,7 @@ public class Semestr {
 
 	@OneToOne
 	private PowierzeniaProwadzacego powierzeniaProwadzacego;
+
+	@OneToMany
+	private List<LimityProwadzacego> limityProwadzacego = new ArrayList<LimityProwadzacego>();
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import dtos.CourseTo;
 import dtos.DesignationTo;
+import dtos.DesignationsInSemesterTo;
 import dtos.LecturerTo;
 import dtos.UserTo;
 
@@ -22,4 +23,8 @@ public interface DesignationPlanningFacade {
 	List<DesignationTo> getDesignations(String courseId);
 
 	void updateDesignationsForCourse(String courseId, List<DesignationTo> designations);
+
+	// new
+
+	List<DesignationsInSemesterTo> getAllDesignationsInSemesterManagedBy(int userId, String token);
 }

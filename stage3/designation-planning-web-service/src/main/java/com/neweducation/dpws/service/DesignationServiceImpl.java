@@ -11,6 +11,7 @@ import com.neweducation.dpws.core.model.LecturersModel;
 
 import dtos.CourseTo;
 import dtos.DesignationTo;
+import dtos.DesignationsInSemesterTo;
 import dtos.LecturerTo;
 import dtos.UserTo;
 
@@ -69,6 +70,13 @@ public class DesignationServiceImpl implements DesignationService {
 	public CourseTo zzzzzGetCourseById(long id) {
 		return coursesModel.getById(id);
 
+	}
+
+	// new
+
+	@Override
+	public List<DesignationsInSemesterTo> getAllDesignationsInSemesterManagedBy(int userId, String token) {
+		return this.designationsInSemesterModel.getAllDesignationsInSemesterManagedBy(userId, token);
 	}
 
 }

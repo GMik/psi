@@ -8,6 +8,7 @@ import com.neweducation.dpws.service.DesignationService;
 
 import dtos.CourseTo;
 import dtos.DesignationTo;
+import dtos.DesignationsInSemesterTo;
 import dtos.LecturerTo;
 import dtos.UserTo;
 
@@ -58,6 +59,11 @@ public class DesignationPlanningFacadeImpl implements DesignationPlanningFacade 
 	public CourseTo tempzzzgetCourseById(long id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<DesignationsInSemesterTo> getAllDesignationsInSemesterManagedBy(int userId, String token) {
+		return this.designationService.getAllDesignationsInSemesterManagedBy(userId, token);
 	}
 
 }

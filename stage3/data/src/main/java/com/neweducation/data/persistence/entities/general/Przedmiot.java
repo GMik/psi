@@ -30,6 +30,7 @@ public class Przedmiot {
 	private List<PlanStudiow> planyStudiow = new ArrayList<PlanStudiow>();
 
 	@OneToMany
+
 	private List<Kurs> kursy = new ArrayList<Kurs>();
 
 	@ManyToMany

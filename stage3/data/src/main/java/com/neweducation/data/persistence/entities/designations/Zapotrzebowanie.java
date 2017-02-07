@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 import com.neweducation.data.persistence.entities.general.Kurs;
 import com.neweducation.data.persistence.entities.general.Powierzenie;
@@ -24,12 +23,16 @@ public class Zapotrzebowanie {
 	private long id;
 
 	@Column
-	private String liczbaGodzin;
+	private int liczbaGodzin;
+
+	@Column
+	private int przydzielonaLiczbaGodzin; // suma z Powierzenie.liczbaGodzin
+											// patrz nizej
 
 	@OneToMany
 	private List<Powierzenie> powierzenia = new ArrayList<Powierzenie>();
 
-	@OneToOne
+	@ManyToOne
 	private Kurs kurs;
 
 	@ManyToOne

@@ -13,8 +13,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 import com.neweducation.data.persistence.entities.survey.StatusSondazu;
-import com.neweducation.data.persistence.entities.survey.TypSondazu;
-import com.neweducation.data.persistence.entities.survey.Wynik;
 
 @Entity
 public class Sondaz {
@@ -38,9 +36,6 @@ public class Sondaz {
 	@Column
 	private String opis;
 
-	@ManyToOne
-	private Wynik wynik;
-
 	@ManyToMany
 	private List<Specjalnosc> specjalnosci = new ArrayList<Specjalnosc>();
 
@@ -52,8 +47,5 @@ public class Sondaz {
 
 	@Enumerated
 	private StatusSondazu statusSondazu;
-
-	@Enumerated
-	private TypSondazu typSondazu;
 
 }
