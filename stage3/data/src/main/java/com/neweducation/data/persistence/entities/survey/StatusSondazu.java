@@ -6,5 +6,4 @@ public enum StatusSondazu {
 	Aktywny, 
 	Nieaktywny, 
 	Zakonczony;
-	public Sondaz sondaz;
 }

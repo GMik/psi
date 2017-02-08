@@ -2,15 +2,13 @@ package com.neweducation.data.facade;
 
 import java.util.List;
 
+import com.neweducation.data.persistence.entities.general.Sondaz;
+import com.neweducation.data.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.neweducation.data.persistence.entities.general.Kurs;
-import com.neweducation.data.services.KierunekService;
-import com.neweducation.data.services.KursService;
-import com.neweducation.data.services.PowierzeniaWSemestrzeService;
-import com.neweducation.data.services.PowierzenieService;
 
 @Component
 public class DataFacadeImpl implements DataFacade {
@@ -30,6 +28,10 @@ public class DataFacadeImpl implements DataFacade {
 	@Autowired
 	@Qualifier("kierunekService")
 	private KierunekService kierunekService;
+
+	@Autowired
+	@Qualifier("kierunekService")
+	private SondazService sondazService;
 
 	@Override
 	public List<Kurs> getCoursesForDesignationsInSemester(List<Integer> designationsIds) {
@@ -54,6 +56,11 @@ public class DataFacadeImpl implements DataFacade {
 	@Override
 	public void acceptDesignation(int designationId) {
 		powierzenieService.acceptDesignation(designationId);
+	}
+
+	@Override
+	public List<Sondaz> getSurveys(String authToken) {
+		return sondazService.getSondaz(authToken);
 	}
 
 	// @Override

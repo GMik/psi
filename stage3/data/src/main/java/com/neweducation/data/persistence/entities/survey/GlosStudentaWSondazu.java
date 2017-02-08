@@ -1,11 +1,9 @@
 package com.neweducation.data.persistence.entities.survey;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+import com.neweducation.data.persistence.entities.general.Sondaz;
+import com.neweducation.data.persistence.entities.general.Student;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,4 +19,9 @@ public class GlosStudentaWSondazu {
 	@Column(nullable = true)
 	private String wybor;
 
+	@ManyToOne
+	private Sondaz sondaz;
+
+	@ManyToOne
+	private Student student;
 }

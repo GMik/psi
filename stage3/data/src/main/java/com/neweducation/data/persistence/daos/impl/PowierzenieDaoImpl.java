@@ -6,10 +6,13 @@ import com.neweducation.data.persistence.daos.PowierzenieDao;
 import com.neweducation.data.persistence.daos.generics.AbstractHibernateDao;
 import com.neweducation.data.persistence.entities.designations.StatusPowierzenia;
 import com.neweducation.data.persistence.entities.general.Powierzenie;
+import com.neweducation.data.persistence.entities.general.Sondaz;
+import org.springframework.stereotype.Repository;
 
 /**
  * Created by Maciej Wolański maciekwski@gmail.com on 08.02.2017.
  */
+@Repository
 public class PowierzenieDaoImpl extends AbstractHibernateDao<Powierzenie> implements PowierzenieDao {
 	@Override
 	public void updateDesignationStatus(int designationId, StatusPowierzenia status) {
@@ -18,5 +21,11 @@ public class PowierzenieDaoImpl extends AbstractHibernateDao<Powierzenie> implem
 		if (status == StatusPowierzenia.Zaakceptowane) {
 			pow.setDataAkceptacji(new Date().toString()); // TODO: Formatter
 		}
+	}
+
+	public PowierzenieDaoImpl() {
+		super();
+
+		setClazz(Powierzenie.class);
 	}
 }

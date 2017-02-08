@@ -24,7 +24,7 @@ public class SemestrController extends AbstractController {
 
 		UserTo user = null;
 		try {
-			user = authenticator.authenticateUser("123");
+			user = authenticator.authenticateUser(authToken);
 		} catch (NotAuthenticatedException e) {
 			return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
 		}

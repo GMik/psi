@@ -52,7 +52,7 @@ public class DesignationController extends AbstractController {
     public ResponseEntity<Object> discardDesignation(@RequestParam(value = "designationId") int designationId, String authToken) {
         UserTo user = null;
         try {
-            user = authenticator.authenticateUser("123");
+            user = authenticator.authenticateUser(authToken);
         } catch (NotAuthenticatedException e) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
@@ -75,7 +75,7 @@ public class DesignationController extends AbstractController {
     public ResponseEntity<Object> acceptDesignation(@RequestParam(value = "designationId") int designationId, String authToken) {
         UserTo user = null;
         try {
-            user = authenticator.authenticateUser("123");
+            user = authenticator.authenticateUser(authToken);
         } catch (NotAuthenticatedException e) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }

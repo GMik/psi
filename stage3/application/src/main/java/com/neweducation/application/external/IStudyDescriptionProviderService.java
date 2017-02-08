@@ -7,5 +7,5 @@ package com.neweducation.application.external;
  */
 public interface IStudyDescriptionProviderService {
 
-    String getStudyDescription(int id);
+    String getStudyDescription(long id);
 }

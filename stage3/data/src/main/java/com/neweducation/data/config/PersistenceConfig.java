@@ -4,6 +4,11 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
+import com.neweducation.data.persistence.daos.*;
+import com.neweducation.data.persistence.daos.impl.*;
+import com.neweducation.data.persistence.entities.general.Sondaz;
+import com.neweducation.data.services.*;
+import com.neweducation.data.services.impl.*;
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -25,22 +30,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.google.common.base.Preconditions;
 import com.neweducation.data.facade.DataFacade;
 import com.neweducation.data.facade.DataFacadeImpl;
-import com.neweducation.data.persistence.daos.KierunekDao;
-import com.neweducation.data.persistence.daos.KursDao;
-import com.neweducation.data.persistence.daos.PowierzeniaWSemestrzeDao;
-import com.neweducation.data.persistence.daos.PowierzenieDao;
-import com.neweducation.data.persistence.daos.impl.KierunekDaoImpl;
-import com.neweducation.data.persistence.daos.impl.KursDaoImpl;
-import com.neweducation.data.persistence.daos.impl.PowierzeniaWSemestrzeDaoImpl;
-import com.neweducation.data.persistence.daos.impl.PowierzenieDaoImpl;
-import com.neweducation.data.services.KierunekService;
-import com.neweducation.data.services.KursService;
-import com.neweducation.data.services.PowierzeniaWSemestrzeService;
-import com.neweducation.data.services.PowierzenieService;
-import com.neweducation.data.services.impl.KierunekServiceImpl;
-import com.neweducation.data.services.impl.KursServiceImpl;
-import com.neweducation.data.services.impl.PowierzeniaWSemestrzeServiceImpl;
-import com.neweducation.data.services.impl.PowierzenieServiceImpl;
 
 @Configuration
 @EnableTransactionManagement
@@ -150,10 +139,19 @@ public class PersistenceConfig {
 	public PowierzenieDao powierzenieDao() {
 		return new PowierzenieDaoImpl();
 	}
+	@Bean
+	public SondazDao sondazDao() {
+		return new SondazDaoImpl();
+	}
 
 	@Bean
 	public PowierzenieService powierzenieService() {
 		return new PowierzenieServiceImpl();
+	}
+
+	@Bean
+	public SondazService sondazService() {
+		return new SondazServiceImpl();
 	}
 
 	private final Properties hibernateProperties() {

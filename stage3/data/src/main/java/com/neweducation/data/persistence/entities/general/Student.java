@@ -5,9 +5,11 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import com.neweducation.data.persistence.entities.designations.PlanStudiow;
 
+import com.neweducation.data.persistence.entities.survey.GlosStudentaWSondazu;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,8 +18,8 @@ import lombok.Setter;
 @Setter
 public class Student extends Uzytkownik {
 
-	@ManyToMany
-	private List<Sondaz> sondaze = new ArrayList<Sondaz>();
+	@OneToMany
+	private List<GlosStudentaWSondazu> sondaze = new ArrayList<>();
 
 	@ManyToMany
 	private List<PlanStudiow> planyStudiow = new ArrayList<PlanStudiow>();
