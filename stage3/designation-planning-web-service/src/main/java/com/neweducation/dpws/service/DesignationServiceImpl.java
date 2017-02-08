@@ -82,12 +82,24 @@ public class DesignationServiceImpl implements DesignationService {
 		designationsModel.discardDesignation(designationId);
 	}
 
-    @Override
-    public void acceptDesignation(int designationId) {
-        this.designationsModel.acceptDesignation(designationId);
-    }
+	@Override
+	public void acceptDesignation(int designationId) {
+		this.designationsModel.acceptDesignation(designationId);
+	}
 
-    // new
+	@Override
+	public void addNewDesignation(long courseId, long lecturerId, long numberOfHours, long requestId,
+			long designationInSemesterId) {
+		this.designationsModel.addNewDesignation(courseId, lecturerId, numberOfHours, requestId,
+				designationInSemesterId);
+	}
+
+	@Override
+	public List<DesignationTo> getAllDesignationsOfUserInSemester(long userId, long semesterId) {
+		return this.designationsModel.getAllDesignationsOfUserInSemester(userId, semesterId);
+	}
+
+	// new
 
 	// @Override
 	// public List<DesignationsInSemesterTo>

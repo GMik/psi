@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 
 import com.neweducation.data.persistence.entities.general.Kurs;
 
+import dtos.DesignationTo;
+
 @Component
 public class DataFacadeImpl implements DataFacade {
 
@@ -61,6 +63,16 @@ public class DataFacadeImpl implements DataFacade {
 	@Override
 	public List<Sondaz> getSurveys(String authToken) {
 		return sondazService.getSondaz(authToken);
+	}
+
+	public void addNewDesignation(long courseId, long lecturerId, long numberOfHours, long requestId,
+			long designationInSemesterId) {
+		powierzenieService.addNewDesignation(courseId, lecturerId, numberOfHours, requestId, designationInSemesterId);
+	}
+
+	@Override
+	public List<DesignationTo> getAllDesignationsOfUserInSemester(long userId, long semesterId) {
+		return powierzenieService.getAllDesignationsOfUserInSemester(userId, semesterId);
 	}
 
 	// @Override

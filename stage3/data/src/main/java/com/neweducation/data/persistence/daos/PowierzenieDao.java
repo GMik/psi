@@ -1,5 +1,7 @@
 package com.neweducation.data.persistence.daos;
 
+import java.util.List;
+
 import com.neweducation.data.persistence.daos.generics.IOperations;
 import com.neweducation.data.persistence.entities.designations.StatusPowierzenia;
 import com.neweducation.data.persistence.entities.general.Powierzenie;
@@ -9,4 +11,6 @@ import com.neweducation.data.persistence.entities.general.Powierzenie;
  */
 public interface PowierzenieDao extends IOperations<Powierzenie> {
 	void updateDesignationStatus(int designationId, StatusPowierzenia status);
+
+	List<Powierzenie> getAllDesignationsOfUserInSemester(long userId, long semesterId);
 }

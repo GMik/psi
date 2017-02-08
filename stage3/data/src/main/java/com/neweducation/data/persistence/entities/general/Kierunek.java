@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -22,9 +23,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-// @NamedQuery(name = "Kierunek.getCoursesFor", query = "SELECT ku FROM Kierunek
-// k JOIN k.planyStudiows ps JOIN ps.przedmioty p JOIN p.kursy ku WHERE k.id =
-// facultyId AND k.wydzial = :facultyId AND ku.semestr.id = :semesterId ")
+@NamedQuery(name = "Kierunek.getCoursesFor", query = "SELECT ku FROM Kierunek k JOIN k.planyStudiows ps JOIN ps.przedmioty p JOIN p.kursy ku WHERE k.id = :fieldOfStudyId AND k.wydzial.id = :facultyId AND ku.semestr.id = :semesterId ")
 public class Kierunek {
 
 	// return

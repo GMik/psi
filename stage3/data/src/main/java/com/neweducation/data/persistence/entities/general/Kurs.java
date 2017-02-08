@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 import com.neweducation.data.persistence.entities.designations.FormaKursu;
@@ -21,8 +22,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-// @NamedQuery(name = "Kurs.findCoursesForDesignationsInSemester", query =
-// "SELECT k FROM Kurs k WHERE k.id in (:designationsIds)")
+@NamedQuery(name = "Kurs.findCoursesForDesignationsInSemester", query = "SELECT k FROM Kurs k WHERE k.id in (:designationsIds)")
 
 public class Kurs {
 

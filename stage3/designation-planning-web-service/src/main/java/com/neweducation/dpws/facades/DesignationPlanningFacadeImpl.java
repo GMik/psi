@@ -71,12 +71,25 @@ public class DesignationPlanningFacadeImpl implements DesignationPlanningFacade 
 		this.designationService.discardDesignation(designationId);
 	}
 
-    @Override
-    public void acceptDesignation(int designationId) {
+	@Override
+	public void acceptDesignation(int designationId) {
 		this.designationService.acceptDesignation(designationId);
-    }
+	}
 
-    // @Override
+	@Override
+	public void addNewDesignation(long courseId, long lecturerId, long numberOfHours, long requestId,
+			long designationInSemesterId) {
+		this.designationService.addNewDesignation(courseId, lecturerId, numberOfHours, requestId,
+				designationInSemesterId);
+
+	}
+
+	@Override
+	public List<DesignationTo> getAllDesignationsOfUserInSemester(long userId, long semesterId) {
+		return this.designationService.getAllDesignationsOfUserInSemester(userId, semesterId);
+	}
+
+	// @Override
 	// public List<DesignationsInSemesterTo>
 	// getAllDesignationsInSemesterManagedBy(int userId, String token) {
 	// return

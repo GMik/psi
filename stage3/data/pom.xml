@@ -162,7 +162,12 @@
 			<artifactId>lombok</artifactId>
 			<version>1.16.12</version>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>common</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<finalName>spring-hibernate4</finalName>

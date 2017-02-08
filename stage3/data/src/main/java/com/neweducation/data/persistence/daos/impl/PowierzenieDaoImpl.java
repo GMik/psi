@@ -1,6 +1,9 @@
 package com.neweducation.data.persistence.daos.impl;
 
 import java.util.Date;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
 
 import com.neweducation.data.persistence.daos.PowierzenieDao;
 import com.neweducation.data.persistence.daos.generics.AbstractHibernateDao;
@@ -14,6 +17,13 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class PowierzenieDaoImpl extends AbstractHibernateDao<Powierzenie> implements PowierzenieDao {
+
+	public PowierzenieDaoImpl() {
+		super();
+
+		setClazz(Powierzenie.class);
+	}
+
 	@Override
 	public void updateDesignationStatus(int designationId, StatusPowierzenia status) {
 		Powierzenie pow = this.find(designationId);
@@ -23,9 +33,9 @@ public class PowierzenieDaoImpl extends AbstractHibernateDao<Powierzenie> implem
 		}
 	}
 
-	public PowierzenieDaoImpl() {
-		super();
-
-		setClazz(Powierzenie.class);
+	@Override
+	public List<Powierzenie> getAllDesignationsOfUserInSemester(long userId, long semesterId) {
+		return this.getCurrentSession().getNamedQuery("Powierzenie.getAllDesignationsOfUserInSemester")
+				.setParameter("userId", userId).setParameter("semesterId", semesterId).list();
 	}
 }

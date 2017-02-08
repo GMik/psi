@@ -10,7 +10,12 @@ public interface DesignationsModel {
 
 	void updateDesignationsForCourse(String courseId, List<DesignationTo> designations);
 
-    void discardDesignation(int designationId);
+	void discardDesignation(int designationId);
 
-    void acceptDesignation(int designationId);
+	void acceptDesignation(int designationId);
+
+	void addNewDesignation(long courseId, long lecturerId, long numberOfHours, long requestId,
+			long designationInSemesterId);
+
+	List<DesignationTo> getAllDesignationsOfUserInSemester(long userId, long semesterId);
 }

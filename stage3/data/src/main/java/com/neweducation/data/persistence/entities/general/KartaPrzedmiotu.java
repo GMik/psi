@@ -1,5 +1,6 @@
 package com.neweducation.data.persistence.entities.general;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,6 +26,6 @@ public class KartaPrzedmiotu {
 	@Column
 	private String numerSemestru;
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Przedmiot przedmiot;
 }

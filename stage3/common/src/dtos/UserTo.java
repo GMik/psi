@@ -1,8 +1,14 @@
 package dtos;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class UserTo {
-    String authToken;
-    Role role;
-    String imie;
-    String nazwisko;
+	long id;
+	String authToken;
+	Role role;
+	String imie;
+	String nazwisko;
 }

@@ -30,12 +30,16 @@ public interface DesignationService {
 	// (1)
 	List<CourseTo> getCoursesFor(long semesterId, long facultyId, long fieldOfStudyId);
 
-    void discardDesignation(int designationId);
+	void discardDesignation(int designationId);
 
-    void acceptDesignation(int designationId);
+	void acceptDesignation(int designationId);
 
+	void addNewDesignation(long courseId, long lecturerId, long numberOfHours, long requestId,
+			long designationInSemesterId);
 
-    // List<DesignationsInSemesterTo> getAllDesignationsInSemesterManagedBy(int
+	List<DesignationTo> getAllDesignationsOfUserInSemester(long userId, long semesterId);
+
+	// List<DesignationsInSemesterTo> getAllDesignationsInSemesterManagedBy(int
 	// userId, String token);
 
 }

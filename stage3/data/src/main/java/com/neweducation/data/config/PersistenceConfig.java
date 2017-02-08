@@ -30,6 +30,26 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.google.common.base.Preconditions;
 import com.neweducation.data.facade.DataFacade;
 import com.neweducation.data.facade.DataFacadeImpl;
+import com.neweducation.data.persistence.daos.KierunekDao;
+import com.neweducation.data.persistence.daos.KursDao;
+import com.neweducation.data.persistence.daos.PowierzeniaWSemestrzeDao;
+import com.neweducation.data.persistence.daos.PowierzenieDao;
+import com.neweducation.data.persistence.daos.ProwadzacyZajeciaDao;
+import com.neweducation.data.persistence.daos.ZapotrzebowanieDao;
+import com.neweducation.data.persistence.daos.impl.KierunekDaoImpl;
+import com.neweducation.data.persistence.daos.impl.KursDaoImpl;
+import com.neweducation.data.persistence.daos.impl.PowierzeniaWSemestrzeDaoImpl;
+import com.neweducation.data.persistence.daos.impl.PowierzenieDaoImpl;
+import com.neweducation.data.persistence.daos.impl.ProwadzacyZajeciaDaoImpl;
+import com.neweducation.data.persistence.daos.impl.ZapotrzebowanieDaoImpl;
+import com.neweducation.data.services.KierunekService;
+import com.neweducation.data.services.KursService;
+import com.neweducation.data.services.PowierzeniaWSemestrzeService;
+import com.neweducation.data.services.PowierzenieService;
+import com.neweducation.data.services.impl.KierunekServiceImpl;
+import com.neweducation.data.services.impl.KursServiceImpl;
+import com.neweducation.data.services.impl.PowierzeniaWSemestrzeServiceImpl;
+import com.neweducation.data.services.impl.PowierzenieServiceImpl;
 
 @Configuration
 @EnableTransactionManagement
@@ -152,6 +172,16 @@ public class PersistenceConfig {
 	@Bean
 	public SondazService sondazService() {
 		return new SondazServiceImpl();
+	}
+
+	@Bean
+	public ProwadzacyZajeciaDao prowadzacyZajeciaDao() {
+		return new ProwadzacyZajeciaDaoImpl();
+	}
+
+	@Bean
+	public ZapotrzebowanieDao zapotrzebowanieDao() {
+		return new ZapotrzebowanieDaoImpl();
 	}
 
 	private final Properties hibernateProperties() {

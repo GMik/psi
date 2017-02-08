@@ -3,6 +3,7 @@ package com.neweducation.data.persistence.entities.general;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,7 +35,7 @@ public class Przedmiot {
 	@ManyToMany
 	private List<PlanStudiow> planyStudiow = new ArrayList<PlanStudiow>();
 
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Kurs> kursy = new ArrayList<Kurs>();
 
 	@ManyToMany
