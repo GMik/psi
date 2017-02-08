@@ -4,10 +4,6 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
-import com.neweducation.data.persistence.daos.PowierzeniaDao;
-import com.neweducation.data.persistence.daos.impl.PowierzeniaDaoImpl;
-import com.neweducation.data.services.PowierzeniaService;
-import com.neweducation.data.services.impl.PowierzeniaServiceImpl;
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -32,15 +28,19 @@ import com.neweducation.data.facade.DataFacadeImpl;
 import com.neweducation.data.persistence.daos.KierunekDao;
 import com.neweducation.data.persistence.daos.KursDao;
 import com.neweducation.data.persistence.daos.PowierzeniaWSemestrzeDao;
+import com.neweducation.data.persistence.daos.PowierzenieDao;
 import com.neweducation.data.persistence.daos.impl.KierunekDaoImpl;
 import com.neweducation.data.persistence.daos.impl.KursDaoImpl;
 import com.neweducation.data.persistence.daos.impl.PowierzeniaWSemestrzeDaoImpl;
+import com.neweducation.data.persistence.daos.impl.PowierzenieDaoImpl;
 import com.neweducation.data.services.KierunekService;
 import com.neweducation.data.services.KursService;
 import com.neweducation.data.services.PowierzeniaWSemestrzeService;
+import com.neweducation.data.services.PowierzenieService;
 import com.neweducation.data.services.impl.KierunekServiceImpl;
 import com.neweducation.data.services.impl.KursServiceImpl;
 import com.neweducation.data.services.impl.PowierzeniaWSemestrzeServiceImpl;
+import com.neweducation.data.services.impl.PowierzenieServiceImpl;
 
 @Configuration
 @EnableTransactionManagement
@@ -137,25 +137,24 @@ public class PersistenceConfig {
 	}
 
 	@Bean
-	public KierunekDao lierunekDao() {
+	public KierunekDao kierunekDao() {
 		return new KierunekDaoImpl();
 	}
 
 	@Bean
-	public KierunekService KierunekService() {
+	public KierunekService kierunekService() {
 		return new KierunekServiceImpl();
 	}
 
 	@Bean
-	public PowierzeniaDao powierzeniaDao() {
-		return new PowierzeniaDaoImpl();
+	public PowierzenieDao powierzenieDao() {
+		return new PowierzenieDaoImpl();
 	}
 
 	@Bean
-	public PowierzeniaService powierzeniaService() {
-		return new PowierzeniaServiceImpl();
+	public PowierzenieService powierzenieService() {
+		return new PowierzenieServiceImpl();
 	}
-
 
 	private final Properties hibernateProperties() {
 		final Properties hibernateProperties = new Properties();

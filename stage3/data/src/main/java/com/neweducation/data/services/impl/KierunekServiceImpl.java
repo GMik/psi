@@ -31,7 +31,6 @@ public class KierunekServiceImpl extends AbstractHibernateService<Kierunek> impl
 
 	@Override
 	public List<Kurs> getCoursesFor(long semesterId, long facultyId, long fieldOfStudyId) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.getCoursesFor(semesterId, facultyId, fieldOfStudyId);
 	}
 }

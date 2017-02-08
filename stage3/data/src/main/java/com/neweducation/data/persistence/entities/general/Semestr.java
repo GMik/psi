@@ -48,4 +48,7 @@ public class Semestr {
 
 	@OneToMany
 	private List<LimityProwadzacego> limityProwadzacego = new ArrayList<LimityProwadzacego>();
+
+	@OneToMany
+	private List<Kurs> kursy = new ArrayList<Kurs>();
 }

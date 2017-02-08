@@ -22,7 +22,16 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+// @NamedQuery(name = "Kierunek.getCoursesFor", query = "SELECT ku FROM Kierunek
+// k JOIN k.planyStudiows ps JOIN ps.przedmioty p JOIN p.kursy ku WHERE k.id =
+// facultyId AND k.wydzial = :facultyId AND ku.semestr.id = :semesterId ")
 public class Kierunek {
+
+	// return
+	// this.getCurrentSession().getNamedQuery("Kierunek.getCoursesFor").setParameter("semesterId",
+	// semesterId)
+	// .setParameter("facultyId", facultyId).setParameter("fieldOfStudyId",
+	// fieldOfStudyId).list();
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

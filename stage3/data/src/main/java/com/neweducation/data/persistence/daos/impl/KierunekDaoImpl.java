@@ -20,7 +20,7 @@ public class KierunekDaoImpl extends AbstractHibernateDao<Kierunek> implements K
 
 	@Override
 	public List<Kurs> getCoursesFor(long semesterId, long facultyId, long fieldOfStudyId) {
-		return this.getCurrentSession().getNamedQuery("Kurs.getCoursesFor").setParameter("semesterId", semesterId)
+		return this.getCurrentSession().getNamedQuery("Kierunek.getCoursesFor").setParameter("semesterId", semesterId)
 				.setParameter("facultyId", facultyId).setParameter("fieldOfStudyId", fieldOfStudyId).list();
 	}
 

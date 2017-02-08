@@ -2,7 +2,6 @@ package com.neweducation.data.facade;
 
 import java.util.List;
 
-import com.neweducation.data.services.PowierzeniaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -11,6 +10,7 @@ import com.neweducation.data.persistence.entities.general.Kurs;
 import com.neweducation.data.services.KierunekService;
 import com.neweducation.data.services.KursService;
 import com.neweducation.data.services.PowierzeniaWSemestrzeService;
+import com.neweducation.data.services.PowierzenieService;
 
 @Component
 public class DataFacadeImpl implements DataFacade {
@@ -24,8 +24,8 @@ public class DataFacadeImpl implements DataFacade {
 	private PowierzeniaWSemestrzeService powierzeniaWSemestrzeService;
 
 	@Autowired
-	@Qualifier("powierzeniaWSemestrzeService")
-	private PowierzeniaService powierzeniaService;
+	@Qualifier("powierzenieService")
+	private PowierzenieService powierzenieService;
 
 	@Autowired
 	@Qualifier("kierunekService")
@@ -46,17 +46,17 @@ public class DataFacadeImpl implements DataFacade {
 		return kierunekService.getCoursesFor(semesterId, facultyId, fieldOfStudyId);
 	}
 
-    @Override
-    public void discardDesignation(int designationId) {
-        powierzeniaService.discardDesignation(designationId);
-    }
+	@Override
+	public void discardDesignation(int designationId) {
+		powierzenieService.discardDesignation(designationId);
+	}
 
-    @Override
-    public void acceptDesignation(int designationId) {
-        powierzeniaService.acceptDesignation(designationId);
-    }
+	@Override
+	public void acceptDesignation(int designationId) {
+		powierzenieService.acceptDesignation(designationId);
+	}
 
-    // @Override
+	// @Override
 	// public List getAllDesignationsInSemesterManagedBy(int userId, String
 	// token) {
 	// return
