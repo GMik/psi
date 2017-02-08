@@ -4,6 +4,10 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
+import com.neweducation.data.persistence.daos.PowierzeniaDao;
+import com.neweducation.data.persistence.daos.impl.PowierzeniaDaoImpl;
+import com.neweducation.data.services.PowierzeniaService;
+import com.neweducation.data.services.impl.PowierzeniaServiceImpl;
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -141,6 +145,17 @@ public class PersistenceConfig {
 	public KierunekService KierunekService() {
 		return new KierunekServiceImpl();
 	}
+
+	@Bean
+	public PowierzeniaDao powierzeniaDao() {
+		return new PowierzeniaDaoImpl();
+	}
+
+	@Bean
+	public PowierzeniaService powierzeniaService() {
+		return new PowierzeniaServiceImpl();
+	}
+
 
 	private final Properties hibernateProperties() {
 		final Properties hibernateProperties = new Properties();

@@ -77,6 +77,11 @@ public class DesignationServiceImpl implements DesignationService {
 		return coursesModel.getCoursesFor(semesterId, facultyId, fieldOfStudyId);
 	}
 
+	@Override
+	public void discardDesignation(int designationId) {
+		designationsModel.discardDesignation(designationId);
+	}
+
 	// new
 
 	// @Override

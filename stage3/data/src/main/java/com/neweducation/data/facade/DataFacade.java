@@ -11,5 +11,7 @@ public interface DataFacade {
 
 	List<Kurs> getCoursesFor(long semesterId, long facultyId, long fieldOfStudyId);
 
-	// void getAllDesignationsInSemesterManagedBy(int userId, String token);
+    void discardDesignation(int designationId);
+
+    // void getAllDesignationsInSemesterManagedBy(int userId, String token);
 }

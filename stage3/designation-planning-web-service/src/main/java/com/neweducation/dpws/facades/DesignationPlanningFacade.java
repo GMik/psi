@@ -26,7 +26,10 @@ public interface DesignationPlanningFacade {
 	// (1)
 	List<CourseTo> getCoursesFor(long semesterId, long facultyId, long fieldOfStudyId);
 
-	// new
+
+    void discardDesignation(int designationId);
+
+    // new
 
 	// List<DesignationsInSemesterTo> getAllDesignationsInSemesterManagedBy(int
 	// userId, String token);

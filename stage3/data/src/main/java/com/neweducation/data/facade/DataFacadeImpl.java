@@ -2,6 +2,7 @@ package com.neweducation.data.facade;
 
 import java.util.List;
 
+import com.neweducation.data.services.PowierzeniaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -23,6 +24,10 @@ public class DataFacadeImpl implements DataFacade {
 	private PowierzeniaWSemestrzeService powierzeniaWSemestrzeService;
 
 	@Autowired
+	@Qualifier("powierzeniaWSemestrzeService")
+	private PowierzeniaService powierzeniaService;
+
+	@Autowired
 	@Qualifier("kierunekService")
 	private KierunekService kierunekService;
 
@@ -41,7 +46,12 @@ public class DataFacadeImpl implements DataFacade {
 		return kierunekService.getCoursesFor(semesterId, facultyId, fieldOfStudyId);
 	}
 
-	// @Override
+    @Override
+    public void discardDesignation(int designationId) {
+        powierzeniaService.discardDesignation(designationId);
+    }
+
+    // @Override
 	// public List getAllDesignationsInSemesterManagedBy(int userId, String
 	// token) {
 	// return

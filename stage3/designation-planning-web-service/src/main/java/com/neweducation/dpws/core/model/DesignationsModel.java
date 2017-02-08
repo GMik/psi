@@ -9,4 +9,6 @@ public interface DesignationsModel {
 	List<DesignationTo> getDesignations();
 
 	void updateDesignationsForCourse(String courseId, List<DesignationTo> designations);
+
+    void discardDesignation(int designationId);
 }
