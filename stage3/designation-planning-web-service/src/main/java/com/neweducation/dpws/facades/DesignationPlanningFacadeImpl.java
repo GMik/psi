@@ -84,6 +84,11 @@ public class DesignationPlanningFacadeImpl implements DesignationPlanningFacade 
 
 	}
 
+	@Override
+	public List<DesignationTo> getAllDesignationsOfUserInSemester(long userId, long semesterId) {
+		return this.designationService.getAllDesignationsOfUserInSemester(userId, semesterId);
+	}
+
 	// @Override
 	// public List<DesignationsInSemesterTo>
 	// getAllDesignationsInSemesterManagedBy(int userId, String token) {

@@ -1,5 +1,7 @@
 package com.neweducation.application.controllers;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.neweducation.application.security.NotAuthenticatedException;
 
+import dtos.DesignationTo;
 import dtos.UserTo;
 
 @RestController
@@ -72,7 +75,7 @@ public class DesignationController extends AbstractController {
 			String authToken) {
 		UserTo user = null;
 		try {
-			user = authenticator.authenticateUser("123");
+			user = authenticator.authenticateUser(authToken);
 		} catch (NotAuthenticatedException e) {
 			return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
 		}
@@ -91,7 +94,7 @@ public class DesignationController extends AbstractController {
 			@RequestParam(value = "powierzenieWSemestrzeId") long designationInSemesterId) {
 		UserTo user = null;
 		try {
-			user = authenticator.authenticateUser("123");
+			user = authenticator.authenticateUser(authToken);
 		} catch (NotAuthenticatedException e) {
 			return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
 		}
@@ -99,6 +102,22 @@ public class DesignationController extends AbstractController {
 		this.designationPlanningFacade.addNewDesignation(courseId, lecturerId, numberOfHours, requestId,
 				designationInSemesterId);
 		return ResponseEntity.ok().body(new Object());
+	}
+
+	@RequestMapping(value = "/designation/semestr/{id}", method = RequestMethod.GET)
+	public ResponseEntity<List<DesignationTo>> getAllDesignationsOfUser(
+			@RequestParam(value = "authToken") String authToken, @RequestParam(value = "semesterId") long semesterId) {
+		UserTo user = null;
+		try {
+			user = authenticator.authenticateUser(authToken);
+		} catch (NotAuthenticatedException e) {
+			return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+		}
+
+		List<DesignationTo> designationTos = this.designationPlanningFacade
+				.getAllDesignationsOfUserInSemester(user.getId(), semesterId);
+
+		return ResponseEntity.ok().body(designationTos);
 	}
 
 	// auth_token

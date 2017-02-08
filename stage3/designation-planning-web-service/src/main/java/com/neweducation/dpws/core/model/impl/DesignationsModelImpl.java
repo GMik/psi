@@ -50,4 +50,14 @@ public class DesignationsModelImpl extends AbstractModel implements Designations
 		}
 	}
 
+	@Override
+	public List<DesignationTo> getAllDesignationsOfUserInSemester(long userId, long semesterId) {
+		try {
+			return this.dataFacade.getAllDesignationsOfUserInSemester(userId, semesterId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 }

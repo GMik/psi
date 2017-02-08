@@ -94,6 +94,11 @@ public class DesignationServiceImpl implements DesignationService {
 				designationInSemesterId);
 	}
 
+	@Override
+	public List<DesignationTo> getAllDesignationsOfUserInSemester(long userId, long semesterId) {
+		return this.designationsModel.getAllDesignationsOfUserInSemester(userId, semesterId);
+	}
+
 	// new
 
 	// @Override

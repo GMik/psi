@@ -16,4 +16,6 @@ public interface DesignationsModel {
 
 	void addNewDesignation(long courseId, long lecturerId, long numberOfHours, long requestId,
 			long designationInSemesterId);
+
+	List<DesignationTo> getAllDesignationsOfUserInSemester(long userId, long semesterId);
 }

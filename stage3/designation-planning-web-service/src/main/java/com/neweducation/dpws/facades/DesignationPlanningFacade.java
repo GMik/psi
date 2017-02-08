@@ -33,6 +33,8 @@ public interface DesignationPlanningFacade {
 	void addNewDesignation(long courseId, long lecturerId, long numberOfHours, long requestId,
 			long designationInSemesterId);
 
+	List<DesignationTo> getAllDesignationsOfUserInSemester(long id, long semesterId);
+
 	// new
 
 	// List<DesignationsInSemesterTo> getAllDesignationsInSemesterManagedBy(int

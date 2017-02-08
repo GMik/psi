@@ -12,6 +12,8 @@ import com.neweducation.data.services.KursService;
 import com.neweducation.data.services.PowierzeniaWSemestrzeService;
 import com.neweducation.data.services.PowierzenieService;
 
+import dtos.DesignationTo;
+
 @Component
 public class DataFacadeImpl implements DataFacade {
 
@@ -60,6 +62,11 @@ public class DataFacadeImpl implements DataFacade {
 	public void addNewDesignation(long courseId, long lecturerId, long numberOfHours, long requestId,
 			long designationInSemesterId) {
 		powierzenieService.addNewDesignation(courseId, lecturerId, numberOfHours, requestId, designationInSemesterId);
+	}
+
+	@Override
+	public List<DesignationTo> getAllDesignationsOfUserInSemester(long userId, long semesterId) {
+		return powierzenieService.getAllDesignationsOfUserInSemester(userId, semesterId);
 	}
 
 	// @Override

@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.neweducation.data.persistence.entities.general.Kurs;
 
+import dtos.DesignationTo;
+
 public interface DataFacade {
 	List<Kurs> getCoursesForDesignationsInSemester(List<Integer> designationsIds);
 
@@ -17,6 +19,8 @@ public interface DataFacade {
 
 	void addNewDesignation(long courseId, long lecturerId, long numberOfHours, long requestId,
 			long designationInSemesterId);
+
+	List<DesignationTo> getAllDesignationsOfUserInSemester(long userId, long semesterId);
 
 	// void getAllDesignationsInSemesterManagedBy(int userId, String token);
 }

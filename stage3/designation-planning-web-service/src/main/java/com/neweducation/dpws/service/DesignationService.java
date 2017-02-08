@@ -37,6 +37,8 @@ public interface DesignationService {
 	void addNewDesignation(long courseId, long lecturerId, long numberOfHours, long requestId,
 			long designationInSemesterId);
 
+	List<DesignationTo> getAllDesignationsOfUserInSemester(long userId, long semesterId);
+
 	// List<DesignationsInSemesterTo> getAllDesignationsInSemesterManagedBy(int
 	// userId, String token);
 

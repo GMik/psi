@@ -1,5 +1,8 @@
 package com.neweducation.data.services.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -18,6 +21,8 @@ import com.neweducation.data.persistence.entities.general.Powierzenie;
 import com.neweducation.data.persistence.entities.general.ProwadzacyZajecia;
 import com.neweducation.data.services.AbstractHibernateService;
 import com.neweducation.data.services.PowierzenieService;
+
+import dtos.DesignationTo;
 
 /**
  * Created by Maciej Wolański maciekwski@gmail.com on 08.02.2017.
@@ -80,5 +85,12 @@ public class PowierzenieServiceImpl extends AbstractHibernateService<Powierzenie
 
 		dao.create(powierzenie);
 
+	}
+
+	@Override
+	public List<DesignationTo> getAllDesignationsOfUserInSemester(long userId, long semesterId) {
+		List<DesignationTo> designationTos = new ArrayList<>();
+
+		return designationTos;
 	}
 }

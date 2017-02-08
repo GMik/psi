@@ -78,7 +78,7 @@ public class TestConnection {
 		EntityManager em = entityManagerFactory.createEntityManager();
 		TypedQuery<Kurs> q = em.createNamedQuery("Kierunek.getCoursesFor", Kurs.class);
 		q.setParameter("facultyId", 1l); // try it with 1L if Hibernate barks
-											// about it
+		// about it
 		q.setParameter("semesterId", 1l);
 		q.setParameter("fieldOfStudyId", 1l);
 		List<Kurs> l = q.getResultList();
