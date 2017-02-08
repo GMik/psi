@@ -2,13 +2,17 @@ package com.neweducation.data.facade;
 
 import java.util.List;
 
-import com.neweducation.data.persistence.entities.general.Sondaz;
-import com.neweducation.data.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.neweducation.data.persistence.entities.general.Kurs;
+import com.neweducation.data.persistence.entities.general.Sondaz;
+import com.neweducation.data.services.KierunekService;
+import com.neweducation.data.services.KursService;
+import com.neweducation.data.services.PowierzeniaWSemestrzeService;
+import com.neweducation.data.services.PowierzenieService;
+import com.neweducation.data.services.SondazService;
 
 import dtos.DesignationTo;
 
@@ -32,7 +36,7 @@ public class DataFacadeImpl implements DataFacade {
 	private KierunekService kierunekService;
 
 	@Autowired
-	@Qualifier("kierunekService")
+	@Qualifier("sondazService")
 	private SondazService sondazService;
 
 	@Override
