@@ -26,4 +26,7 @@ public class ProwadzacyZajecia extends Uzytkownik {
 
 	@OneToMany
 	private List<LimityProwadzacego> limityProwadzacego = new ArrayList<LimityProwadzacego>();
+
+	@OneToMany
+	private List<Powierzenie> powierzenia = new ArrayList<>();
 }

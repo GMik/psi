@@ -1,5 +1,6 @@
 package com.neweducation.data.persistence.entities.general;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
@@ -40,21 +41,24 @@ public class Powierzenie {
 	@Enumerated
 	private StatusPowierzenia statusPowierzenia;
 
-	@ManyToOne
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH })
 	private Zapotrzebowanie zapotrzebowanie;
 
-	@ManyToOne
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH })
 	private PowierzeniaWSemestrze powierzeniaWSemestrze;
 
-	@ManyToOne
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH })
 	private Kurs kurs;
 
 	@ManyToOne
 	private PowierzeniaProwadzacego powierzeniaProwadzacego;
 
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH })
+	private ProwadzacyZajecia prowadzacyZajecia;
+
 	// tego chyba nie ma
 	// private PelnomocnikDziekanaDsKierunku pelnomocnikDziekanaDsKierunku2;
-	// private ProwadzacyZajecia prowadzacyZajecia;
+	//
 	// private PelnomocnikDziekanaDsKierunku pelnomocnikDziekanaDsKierunku;
 	// private SekretarzKierunkuStudiow sekretarzKierunkuStudiow;
 	// private Semestr semestr;

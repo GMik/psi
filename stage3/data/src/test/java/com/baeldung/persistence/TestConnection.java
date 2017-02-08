@@ -3,6 +3,10 @@ package com.baeldung.persistence;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.TypedQuery;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.After;
@@ -61,10 +65,23 @@ public class TestConnection {
 		//
 		// kursService.create(k);
 
-		Kurs k1 = dataFacade.find(1);
-		System.out.println(k1.getLiczbaGodzin());
-
 		printBeans();
+
+		// Kurs k1 = dataFacade.find(1);// null
+		// System.out.println(k1.getLiczbaGodzin());
+
+		// @NamedQuery(name = "Kierunek.getCoursesFor", query = "SELECT ku FROM
+		// Kierunek k JOIN k.planyStudiows ps JOIN ps.przedmioty p JOIN p.kursy
+		// ku WHERE k.id = facultyId AND k.wydzial = :facultyId AND
+		// ku.semestr.id = :semesterId ")
+
+		EntityManager em = entityManagerFactory.createEntityManager();
+		TypedQuery<Kurs> q = em.createNamedQuery("Kierunek.getCoursesFor", Kurs.class);
+		q.setParameter("facultyId", 1l); // try it with 1L if Hibernate barks
+											// about it
+		q.setParameter("semesterId", 1l);
+		q.setParameter("fieldOfStudyId", 1l);
+		List<Kurs> l = q.getResultList();
 	}
 
 	// @Autowired
@@ -73,6 +90,9 @@ public class TestConnection {
 	//
 	@Autowired
 	ApplicationContext applicationContext;
+
+	@Autowired
+	EntityManagerFactory entityManagerFactory;
 
 	//
 	// @Autowired

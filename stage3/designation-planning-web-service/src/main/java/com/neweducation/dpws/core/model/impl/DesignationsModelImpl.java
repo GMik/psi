@@ -40,4 +40,14 @@ public class DesignationsModelImpl extends AbstractModel implements Designations
 		}
 	}
 
+	@Override
+	public void addNewDesignation(long courseId, long lecturerId, long numberOfHours, long requestId,
+			long designationInSemesterId) {
+		try {
+			this.dataFacade.addNewDesignation(courseId, lecturerId, numberOfHours, requestId, designationInSemesterId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 }
