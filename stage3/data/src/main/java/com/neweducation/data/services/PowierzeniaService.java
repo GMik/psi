@@ -7,4 +7,6 @@ package com.neweducation.data.services;
  */
 public interface PowierzeniaService {
     void discardDesignation(int designationId);
+
+    void acceptDesignation(int designationId);
 }

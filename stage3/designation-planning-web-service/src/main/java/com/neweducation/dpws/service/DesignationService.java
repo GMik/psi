@@ -32,6 +32,8 @@ public interface DesignationService {
 
     void discardDesignation(int designationId);
 
+    void acceptDesignation(int designationId);
+
 
     // List<DesignationsInSemesterTo> getAllDesignationsInSemesterManagedBy(int
 	// userId, String token);

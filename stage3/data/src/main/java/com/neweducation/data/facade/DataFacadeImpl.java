@@ -51,6 +51,11 @@ public class DataFacadeImpl implements DataFacade {
         powierzeniaService.discardDesignation(designationId);
     }
 
+    @Override
+    public void acceptDesignation(int designationId) {
+        powierzeniaService.acceptDesignation(designationId);
+    }
+
     // @Override
 	// public List getAllDesignationsInSemesterManagedBy(int userId, String
 	// token) {

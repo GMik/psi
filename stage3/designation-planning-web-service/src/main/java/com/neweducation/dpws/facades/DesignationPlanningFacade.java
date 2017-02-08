@@ -29,6 +29,8 @@ public interface DesignationPlanningFacade {
 
     void discardDesignation(int designationId);
 
+    void acceptDesignation(int designationId);
+
     // new
 
 	// List<DesignationsInSemesterTo> getAllDesignationsInSemesterManagedBy(int

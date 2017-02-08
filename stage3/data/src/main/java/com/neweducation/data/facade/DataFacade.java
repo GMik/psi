@@ -13,5 +13,7 @@ public interface DataFacade {
 
     void discardDesignation(int designationId);
 
+    void acceptDesignation(int designationId);
+
     // void getAllDesignationsInSemesterManagedBy(int userId, String token);
 }

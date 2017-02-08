@@ -82,7 +82,12 @@ public class DesignationServiceImpl implements DesignationService {
 		designationsModel.discardDesignation(designationId);
 	}
 
-	// new
+    @Override
+    public void acceptDesignation(int designationId) {
+        this.designationsModel.acceptDesignation(designationId);
+    }
+
+    // new
 
 	// @Override
 	// public List<DesignationsInSemesterTo>

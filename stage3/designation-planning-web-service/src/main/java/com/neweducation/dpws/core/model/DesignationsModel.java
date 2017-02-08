@@ -11,4 +11,6 @@ public interface DesignationsModel {
 	void updateDesignationsForCourse(String courseId, List<DesignationTo> designations);
 
     void discardDesignation(int designationId);
+
+    void acceptDesignation(int designationId);
 }

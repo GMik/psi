@@ -20,4 +20,9 @@ public class PowierzeniaServiceImpl implements PowierzeniaService {
     public void discardDesignation(int designationId) {
         dao.updateDesignationStatus(designationId, StatusPowierzenia.Niezaakceptowane);
     }
+
+    @Override
+    public void acceptDesignation(int designationId) {
+        dao.updateDesignationStatus(designationId, StatusPowierzenia.Zaakceptowane);
+    }
 }

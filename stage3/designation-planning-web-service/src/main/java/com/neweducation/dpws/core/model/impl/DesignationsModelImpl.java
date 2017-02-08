@@ -28,4 +28,13 @@ public class DesignationsModelImpl extends AbstractModel implements Designations
 		}
     }
 
+    @Override
+    public void acceptDesignation(int designationId) {
+		try {
+			this.dataFacade.acceptDesignation(designationId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+
 }

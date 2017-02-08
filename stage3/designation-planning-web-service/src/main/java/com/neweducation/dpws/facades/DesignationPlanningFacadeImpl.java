@@ -71,7 +71,12 @@ public class DesignationPlanningFacadeImpl implements DesignationPlanningFacade 
 		this.designationService.discardDesignation(designationId);
 	}
 
-	// @Override
+    @Override
+    public void acceptDesignation(int designationId) {
+		this.designationService.acceptDesignation(designationId);
+    }
+
+    // @Override
 	// public List<DesignationsInSemesterTo>
 	// getAllDesignationsInSemesterManagedBy(int userId, String token) {
 	// return
