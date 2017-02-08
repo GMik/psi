@@ -10,14 +10,22 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 import com.neweducation.data.persistence.entities.designations.FormaKursu;
 import com.neweducation.data.persistence.entities.designations.Zapotrzebowanie;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
-@NamedQuery(name = "Kurs.findCoursesForDesignationsInSemester", query = "SELECT k FROM Kurs k WHERE k.id in (:designationsIds)")
+@Getter
+@Setter
+@NamedQueries({
+		@NamedQuery(name = "Kurs.findCoursesForDesignationsInSemester", query = "SELECT k FROM Kurs k WHERE k.id in (:designationsIds)"),
+		@NamedQuery(name = "Kurs.getCoursesFor", query = "SELECT k FROM Kurs k WHERE k.id in (:designationsIds)") })
 public class Kurs {
 
 	@Id

@@ -14,7 +14,12 @@ import javax.persistence.ManyToOne;
 
 import com.neweducation.data.persistence.entities.survey.StatusSondazu;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class Sondaz {
 
 	@Id

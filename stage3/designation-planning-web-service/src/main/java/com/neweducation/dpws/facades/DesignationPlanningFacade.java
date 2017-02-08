@@ -23,6 +23,9 @@ public interface DesignationPlanningFacade {
 
 	void updateDesignationsForCourse(String courseId, List<DesignationTo> designations);
 
+	// (1)
+	List<CourseTo> getCoursesFor(long semesterId, long facultyId, long fieldOfStudyId);
+
 	// new
 
 	// List<DesignationsInSemesterTo> getAllDesignationsInSemesterManagedBy(int

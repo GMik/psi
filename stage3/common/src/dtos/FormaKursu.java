@@ -1,4 +1,4 @@
-package com.neweducation.data.persistence.entities.designations;
+package dtos;
 
 public enum FormaKursu {
 	Laboratorium, Wyklad, Cwiczenia, Projekt, Seminarium;

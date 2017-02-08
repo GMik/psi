@@ -73,8 +73,8 @@ public class GreetingControllerTests {
 		printBeans();
 		// CoursesModelImpl model = new CoursesModelImpl();
 		CourseTo cto = coursesModel.getById(1l);
-		System.out.println(cto.liczbaGodzin);
-		System.out.println(cto.nazwa);
+		// System.out.println(cto.liczbaGodzin);
+		// System.out.println(cto.nazwa);
 		//
 		// System.out.println(k.getLiczbaGodzin());
 		// System.out.println(k.getNazwa());

@@ -13,7 +13,12 @@ import com.neweducation.data.persistence.entities.designations.PowierzeniaWSemes
 import com.neweducation.data.persistence.entities.designations.StatusPowierzenia;
 import com.neweducation.data.persistence.entities.designations.Zapotrzebowanie;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class Powierzenie {
 
 	@Id
@@ -21,7 +26,7 @@ public class Powierzenie {
 	private long id;
 
 	@Column
-	private String liczbaGodzin;
+	private int liczbaGodzin;
 
 	@Column
 	private String dataUtworzenia;

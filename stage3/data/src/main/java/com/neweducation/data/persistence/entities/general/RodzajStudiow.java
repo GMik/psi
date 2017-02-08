@@ -1,8 +1,6 @@
-package com.neweducation.data.persistence.entities.survey;
+package com.neweducation.data.persistence.entities.general;
 
 import java.util.ArrayList;
-
-import com.neweducation.data.persistence.entities.general.Kierunek;
 
 public enum RodzajStudiow {
 	Stacjonarne, Niestacjonarne;

@@ -13,7 +13,12 @@ import javax.persistence.OneToMany;
 
 import com.neweducation.data.persistence.entities.designations.PlanStudiow;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class Przedmiot {
 
 	@Id
@@ -30,7 +35,6 @@ public class Przedmiot {
 	private List<PlanStudiow> planyStudiow = new ArrayList<PlanStudiow>();
 
 	@OneToMany
-
 	private List<Kurs> kursy = new ArrayList<Kurs>();
 
 	@ManyToMany

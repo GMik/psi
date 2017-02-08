@@ -6,7 +6,12 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class SekretarzKierunkuStudiow extends Uzytkownik {
 
 	@OneToMany

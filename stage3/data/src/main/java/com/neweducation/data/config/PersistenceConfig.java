@@ -25,12 +25,16 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.google.common.base.Preconditions;
 import com.neweducation.data.facade.DataFacade;
 import com.neweducation.data.facade.DataFacadeImpl;
+import com.neweducation.data.persistence.daos.KierunekDao;
 import com.neweducation.data.persistence.daos.KursDao;
 import com.neweducation.data.persistence.daos.PowierzeniaWSemestrzeDao;
+import com.neweducation.data.persistence.daos.impl.KierunekDaoImpl;
 import com.neweducation.data.persistence.daos.impl.KursDaoImpl;
 import com.neweducation.data.persistence.daos.impl.PowierzeniaWSemestrzeDaoImpl;
+import com.neweducation.data.services.KierunekService;
 import com.neweducation.data.services.KursService;
 import com.neweducation.data.services.PowierzeniaWSemestrzeService;
+import com.neweducation.data.services.impl.KierunekServiceImpl;
 import com.neweducation.data.services.impl.KursServiceImpl;
 import com.neweducation.data.services.impl.PowierzeniaWSemestrzeServiceImpl;
 
@@ -126,6 +130,16 @@ public class PersistenceConfig {
 	@Bean
 	public PowierzeniaWSemestrzeDao powierzeniaWSemestrzeDao() {
 		return new PowierzeniaWSemestrzeDaoImpl();
+	}
+
+	@Bean
+	public KierunekDao lierunekDao() {
+		return new KierunekDaoImpl();
+	}
+
+	@Bean
+	public KierunekService KierunekService() {
+		return new KierunekServiceImpl();
 	}
 
 	private final Properties hibernateProperties() {

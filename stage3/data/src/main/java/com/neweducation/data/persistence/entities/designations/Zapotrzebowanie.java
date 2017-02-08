@@ -15,7 +15,12 @@ import com.neweducation.data.persistence.entities.general.Kurs;
 import com.neweducation.data.persistence.entities.general.Powierzenie;
 import com.neweducation.data.persistence.entities.general.Semestr;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class Zapotrzebowanie {
 
 	@Id

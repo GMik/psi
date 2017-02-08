@@ -9,7 +9,12 @@ import javax.persistence.ManyToOne;
 import com.neweducation.data.persistence.entities.general.ProwadzacyZajecia;
 import com.neweducation.data.persistence.entities.general.Semestr;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class LimityProwadzacego {
 
 	@Id

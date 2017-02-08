@@ -15,9 +15,13 @@ import javax.persistence.OneToOne;
 
 import com.neweducation.data.persistence.entities.designations.PlanStudiow;
 import com.neweducation.data.persistence.entities.designations.PowierzeniaWSemestrze;
-import com.neweducation.data.persistence.entities.survey.RodzajStudiow;
+
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class Kierunek {
 
 	@Id

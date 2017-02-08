@@ -22,4 +22,5 @@ public class KursDaoImpl extends AbstractHibernateDao<Kurs> implements KursDao {
 		return this.getCurrentSession().getNamedQuery("Kurs.findCoursesForDesignationsInSemester")
 				.setParameter("designationsIds", designationsIds).list();
 	}
+
 }

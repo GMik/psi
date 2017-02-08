@@ -60,6 +60,12 @@ public class DesignationPlanningFacadeImpl implements DesignationPlanningFacade 
 		return null;
 	}
 
+	// (1)
+	@Override
+	public List<CourseTo> getCoursesFor(long semesterId, long facultyId, long fieldOfStudyId) {
+		return this.designationService.getCoursesFor(semesterId, facultyId, fieldOfStudyId);
+	}
+
 	// @Override
 	// public List<DesignationsInSemesterTo>
 	// getAllDesignationsInSemesterManagedBy(int userId, String token) {

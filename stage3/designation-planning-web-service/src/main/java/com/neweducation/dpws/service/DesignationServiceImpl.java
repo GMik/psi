@@ -71,6 +71,12 @@ public class DesignationServiceImpl implements DesignationService {
 
 	}
 
+	// (1)
+	@Override
+	public List<CourseTo> getCoursesFor(long semesterId, long facultyId, long fieldOfStudyId) {
+		return coursesModel.getCoursesFor(semesterId, facultyId, fieldOfStudyId);
+	}
+
 	// new
 
 	// @Override

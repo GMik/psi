@@ -18,7 +18,12 @@ import com.neweducation.data.persistence.entities.general.PelnomocnikDziekanaDsK
 import com.neweducation.data.persistence.entities.general.Powierzenie;
 import com.neweducation.data.persistence.entities.general.Semestr;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 @NamedQuery(name = "PowierzeniaWSemestrze.getAllDesignationsInSemesterManagedBy", query = "SELECT pws FROM PowierzeniaWSemestrze pws WHERE pws.pelnomocnikDziekanaDsKierunku = (:designationsIds)")
 public class PowierzeniaWSemestrze {
 

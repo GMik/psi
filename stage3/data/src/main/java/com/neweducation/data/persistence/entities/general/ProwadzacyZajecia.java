@@ -10,7 +10,12 @@ import javax.persistence.OneToMany;
 import com.neweducation.data.persistence.entities.designations.LimityProwadzacego;
 import com.neweducation.data.persistence.entities.designations.PowierzeniaProwadzacego;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class ProwadzacyZajecia extends Uzytkownik {
 
 	@ManyToMany

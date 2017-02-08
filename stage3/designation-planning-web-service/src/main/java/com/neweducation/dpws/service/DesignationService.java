@@ -27,6 +27,9 @@ public interface DesignationService {
 
 	CourseTo zzzzzGetCourseById(long id);
 
+	// (1)
+	List<CourseTo> getCoursesFor(long semesterId, long facultyId, long fieldOfStudyId);
+
 	// List<DesignationsInSemesterTo> getAllDesignationsInSemesterManagedBy(int
 	// userId, String token);
 

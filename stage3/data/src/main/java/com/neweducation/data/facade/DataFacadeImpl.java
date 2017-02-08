@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.neweducation.data.persistence.entities.general.Kurs;
+import com.neweducation.data.services.KierunekService;
 import com.neweducation.data.services.KursService;
 import com.neweducation.data.services.PowierzeniaWSemestrzeService;
 
@@ -21,6 +22,10 @@ public class DataFacadeImpl implements DataFacade {
 	@Qualifier("powierzeniaWSemestrzeService")
 	private PowierzeniaWSemestrzeService powierzeniaWSemestrzeService;
 
+	@Autowired
+	@Qualifier("kierunekService")
+	private KierunekService kierunekService;
+
 	@Override
 	public List<Kurs> getCoursesForDesignationsInSemester(List<Integer> designationsIds) {
 		return kursService.getCoursesForDesignationsInSemester(designationsIds);
@@ -29,6 +34,11 @@ public class DataFacadeImpl implements DataFacade {
 	@Override
 	public Kurs find(long id) {
 		return kursService.find(id);
+	}
+
+	@Override
+	public List<Kurs> getCoursesFor(long semesterId, long facultyId, long fieldOfStudyId) {
+		return kierunekService.getCoursesFor(semesterId, facultyId, fieldOfStudyId);
 	}
 
 	// @Override

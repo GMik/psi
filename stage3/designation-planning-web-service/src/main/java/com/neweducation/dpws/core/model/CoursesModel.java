@@ -12,4 +12,7 @@ public interface CoursesModel {
 
 	CourseTo getById(long id);
 
+	// (1)
+	List<CourseTo> getCoursesFor(long semesterId, long facultyId, long fieldOfStudyId);
+
 }

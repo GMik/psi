@@ -16,7 +16,12 @@ import com.neweducation.data.persistence.entities.designations.PowierzeniaProwad
 import com.neweducation.data.persistence.entities.designations.PowierzeniaWSemestrze;
 import com.neweducation.data.persistence.entities.designations.Zapotrzebowanie;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class Semestr {
 
 	@Id
