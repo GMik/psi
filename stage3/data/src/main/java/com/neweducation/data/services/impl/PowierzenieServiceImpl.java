@@ -90,7 +90,57 @@ public class PowierzenieServiceImpl extends AbstractHibernateService<Powierzenie
 	@Override
 	public List<DesignationTo> getAllDesignationsOfUserInSemester(long userId, long semesterId) {
 		List<DesignationTo> designationTos = new ArrayList<>();
+		List<Powierzenie> powierzenia = this.dao.getAllDesignationsOfUserInSemester(userId, semesterId);
+
+		for (Powierzenie p : powierzenia) {
+			DesignationTo dto = new DesignationTo();
+			dto.setId(p.getId());
+
+			try {
+				dto.setTypStudiow(p.getPowierzeniaWSemestrze().getKierunek().getPlanyStudiows().get(0)
+						.getRodzajStudiow().toString());
+			} catch (Exception e) {
+				// nullpointer / indexoutofbounds
+			}
+
+			try {
+				dto.setWydzial(p.getPowierzeniaWSemestrze().getKierunek().getWydzial().getNazwa());
+			} catch (Exception e) {
+				// nullpointer / indexoutofbounds
+			}
+			try {
+				dto.setKierunek(p.getPowierzeniaWSemestrze().getKierunek().getNazwa());
+			} catch (Exception e) {
+				// nullpointer / indexoutofbounds
+			}
+
+			dto.setKurs(p.getKurs().getNazwa());
+			dto.setKursId(p.getKurs().getId());
+			dto.setForma(p.getKurs().getFormaKursu().toString());
+
+			try {
+				dto.setNrSem(
+						Integer.parseInt(p.getKurs().getPrzedmiot().getKartyPrzedmiotu().get(0).getNumerSemestru()));
+			} catch (Exception e) {
+				// nullpointer / indexoutofbounds
+			}
+
+			dto.setGodziny(p.getLiczbaGodzin());
+			dto.setStatus(p.getStatusPowierzenia().toString());
+			dto.setStatusEnum(statusEnum(p.getStatusPowierzenia()));
+		}
 
 		return designationTos;
 	}
+
+	private int statusEnum(StatusPowierzenia sp) {
+		if (sp.equals(StatusPowierzenia.Zaakceptowane)) {
+			return 1;
+		}
+		if (sp.equals(StatusPowierzenia.Niezaakceptowane)) {
+			return 2;
+		}
+		return 0;
+	}
+
 }

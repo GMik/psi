@@ -7,16 +7,16 @@ import lombok.Setter;
 @Setter
 public class DesignationTo {
 
-	long userId;
+	long id;
 	String typStudiow;
 	String wydzial;
 	String kierunek;
 	String kurs;
 	long kursId;
 	String forma;
-	long nrSem;
-	long godziny;
+	int nrSem;
+	int godziny;
 	String status;
-	long statusEnum;
+	int statusEnum;
 
 }

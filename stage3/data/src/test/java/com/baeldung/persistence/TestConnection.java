@@ -23,6 +23,9 @@ import com.neweducation.data.config.PersistenceConfig;
 import com.neweducation.data.facade.DataFacade;
 import com.neweducation.data.persistence.entities.general.Kurs;
 import com.neweducation.data.services.KursService;
+import com.neweducation.data.services.PowierzenieService;
+
+import dtos.DesignationTo;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { PersistenceConfig.class }, loader = AnnotationConfigContextLoader.class)
@@ -37,6 +40,9 @@ public class TestConnection {
 
 	@Autowired
 	private DataFacade dataFacade;
+
+	@Autowired
+	private PowierzenieService powierzenieService;
 
 	private Session session;
 
@@ -71,8 +77,8 @@ public class TestConnection {
 		// System.out.println(k1.getLiczbaGodzin());
 
 		// @NamedQuery(name = "Kierunek.getCoursesFor", query = "SELECT ku FROM
-		// Kierunek k JOIN k.planyStudiows ps JOIN ps.przedmioty p JOIN p.kursy
-		// ku WHERE k.id = facultyId AND k.wydzial = :facultyId AND
+		// Kierunek k JOIN k.planyStudiows ps JOIN ps.przedmioty p JOIN
+		// p.kursyku WHERE k.id = facultyId AND k.wydzial = :facultyId AND
 		// ku.semestr.id = :semesterId ")
 
 		EntityManager em = entityManagerFactory.createEntityManager();
@@ -82,6 +88,9 @@ public class TestConnection {
 		q.setParameter("semesterId", 1l);
 		q.setParameter("fieldOfStudyId", 1l);
 		List<Kurs> l = q.getResultList();
+
+		List<DesignationTo> l2 = powierzenieService.getAllDesignationsOfUserInSemester(1l, 1l);
+		System.out.println(l2);
 	}
 
 	// @Autowired

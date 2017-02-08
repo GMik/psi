@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 
 import com.neweducation.data.persistence.entities.designations.PowierzeniaProwadzacego;
 import com.neweducation.data.persistence.entities.designations.PowierzeniaWSemestrze;
@@ -20,6 +21,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@NamedQuery(name = "Powierzenie.getAllDesignationsOfUserInSemester", query = "SELECT p FROM Powierzenie p JOIN p.prowadzacyZajecia pz JOIN p.powierzeniaWSemestrze pws JOIN pws.semestr s WHERE pz.id = :userId AND s.id = :semesterId")
 public class Powierzenie {
 
 	@Id
