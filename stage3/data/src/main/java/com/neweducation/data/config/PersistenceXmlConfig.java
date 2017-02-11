@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @ComponentScan({ "com.neweducation.data.persistence.daos" })
-@ImportResource({ "classpath:hibernate4Config.xml" })
+@ImportResource({ "classpath:hibernate5Config.xml" })
 public class PersistenceXmlConfig {
 
 	public PersistenceXmlConfig() {

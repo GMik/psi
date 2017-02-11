@@ -7,7 +7,7 @@
 
     <context:property-placeholder location="classpath:persistence-mysql.properties"/>
 
-    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="packagesToScan" value="com.baeldung.persistence.model"/>
         <property name="hibernateProperties">
@@ -25,7 +25,7 @@
         <property name="password" value="${jdbc.pass}"/>
     </bean>
 
-    <bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+    <bean id="txManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 

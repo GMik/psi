@@ -89,6 +89,8 @@ public class TestConnection {
 		q.setParameter("fieldOfStudyId", 1l);
 		List<Kurs> l = q.getResultList();
 
+		em.getTransaction().rollback();
+
 		List<DesignationTo> l2 = powierzenieService.getAllDesignationsOfUserInSemester(1l, 1l);
 		System.out.println(l2);
 	}

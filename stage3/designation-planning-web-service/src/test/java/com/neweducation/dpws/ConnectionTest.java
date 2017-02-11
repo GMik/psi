@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package hello;
+package com.neweducation.dpws;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,7 +34,7 @@ import dtos.CourseTo;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { DpwsConfig.class }, loader = AnnotationConfigContextLoader.class)
 
-public class GreetingControllerTests {
+public class ConnectionTest {
 
 	// @Autowired
 	// private MockMvc mockMvc;
