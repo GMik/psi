@@ -49,17 +49,17 @@ public class DesignationController extends AbstractController {
 	StatusPowierzenia -> niezaakc
 */
 
-    @RequestMapping(value = "/designation/{designationId}/discard", method = RequestMethod.POST)
-    public ResponseEntity<Object> discardDesignation(@RequestParam(value = "designationId") int designationId, String authToken) {
-        UserTo user = null;
-        try {
-            user = authenticator.authenticateUser(authToken);
-        } catch (NotAuthenticatedException e) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-        }
-        this.designationPlanningFacade.discardDesignation(designationId);
-        return ResponseEntity.ok().body(new Object());
-    }
+//    @RequestMapping(value = "/designation/{designationId}/discard", method = RequestMethod.POST)
+//    public ResponseEntity<Object> discardDesignation(@RequestParam(value = "designationId") int designationId, String authToken) {
+//        UserTo user = null;
+//        try {
+//            user = authenticator.authenticateUser(authToken);
+//        } catch (NotAuthenticatedException e) {
+//            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+//        }
+//        this.designationPlanningFacade.discardDesignation(designationId);
+//        return ResponseEntity.ok().body(new Object());
+//    }
 
 	/*
 	 * Implementacja:

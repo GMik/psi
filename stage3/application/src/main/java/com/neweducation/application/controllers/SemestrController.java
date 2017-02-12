@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.neweducation.application.security.NotAuthenticatedException;
-
 import dtos.UserTo;
 
 @RestController
@@ -36,6 +35,7 @@ public class SemestrController extends AbstractController {
 		semestrOne.put("nazwa", "Semestr I 2016/2017");
 		semestrOne.put("dataRozpoczecia", "11-11-2016");
 		semestrOne.put("dataZakonczenia", "11-11-2017");
+		semestrOne.put("sampleEnum", RodzajStudiow.Stacjonarne);
 
 		Map<String, Object> semestrTwo = new HashMap<String, Object>();
 		// Tu get User z bazy
@@ -48,5 +48,9 @@ public class SemestrController extends AbstractController {
 		semesters.add(semestrTwo);
 
 		return ResponseEntity.ok().body(semesters);
+	}
+	
+	public enum RodzajStudiow {
+		Stacjonarne, Niestacjonarne;
 	}
 }

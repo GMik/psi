@@ -48,27 +48,4 @@ public class Sondaz {
 	@Enumerated
 	private StatusSondazu statusSondazu;
 
-	public String getStatusSondazu(String authToken){
-		if(this.statusSondazu == StatusSondazu.Aktywny){
-			if(glosy.stream().anyMatch(g -> g.getStudent().getAuthToken().equals(authToken) && g.getWybor() != null)){
-				return "Zagłosowano";
-			}
-		}
-		return this.statusSondazu.toString();
-	}
-
-	public int getStatusSondazuEnum(String authToken){
-		switch(this.getStatusSondazu(authToken)){
-			case "Aktywny":
-				return 0;
-			case "Nieaktywny":
-				return 1;
-			case "Zakonczony":
-				return 2;
-			case "Zagłosowano":
-				return 3;
-		}
-		return 1;
-	}
-
 }

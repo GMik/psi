@@ -25,6 +25,9 @@ public class DaneLogowania {
 	@Column
 	private String haslo;
 
+	@Column
+	protected String authToken;
+	
 	@OneToOne
 	private Uzytkownik uzytkownik;
 }

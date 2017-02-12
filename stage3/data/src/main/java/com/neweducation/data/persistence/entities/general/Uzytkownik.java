@@ -30,9 +30,6 @@ public abstract class Uzytkownik {
 	@Column
 	protected String nazwisko;
 
-	@Column
-	protected String authToken;
-
 	@Enumerated
 	protected Uprawnienie uprawnienie;
 
